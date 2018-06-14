@@ -12,9 +12,20 @@ class ApplicationFlowController {
     
     private let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.squareLength)
     
+    private let accountMenuItem: NSMenuItem
+    private var quitMenuItem: NSMenuItem
+    
+    init() {
+        accountMenuItem = NSMenuItem(title: "Account", action: nil, keyEquivalent: "")
+        quitMenuItem = NSMenuItem(title: "Quit",
+                                  action: #selector(NSApplication.terminate),
+                                  keyEquivalent: "q")
+    }
+    
     func start() {
         setupIcon()
         setupMenu()
+        setupAccountMenu()
     }
     
     // MARK: - private setup
@@ -22,37 +33,46 @@ class ApplicationFlowController {
     private func setupIcon() {
         guard let button = statusItem.button else { return }
         button.image = #imageLiteral(resourceName: "icon.post-it")
-        button.action = #selector(click)
     }
     
     private func setupMenu() {
         let menu = NSMenu()
         
-        menu.addItem(createMenuItem(title: "First", action: #selector(printSomething), key: "1"))
-        menu.addItem(createMenuItem(title: "Second", action: #selector(printSomething), key: "2"))
+        menu.addItem(accountMenuItem)
         menu.addItem(NSMenuItem.separator())
-        menu.addItem(NSMenuItem(title: "Quit", action: #selector(NSApplication.terminate), keyEquivalent: "q"))
-        
+        menu.addItem(quitMenuItem)
         
         statusItem.menu = menu
     }
     
-    // MARK: - action
-    
-    @objc private func click() {
-        print("### click")
+    private func setupAccountMenu() {
+        let menu = NSMenu()
+        
+        menu.addItem(createItem(title: "Sign in", action: #selector(showLogin)))
+        
+        accountMenuItem.submenu = menu
     }
+    
+    // MARK: - action
     
     @objc private func printSomething(_ sender: NSMenuItem) {
         print("### item: \(sender.title)")
     }
     
-    // MARK: - private helper
-    
-    private func createMenuItem(title: String, action: Selector, key: String) -> NSMenuItem {
-        let menuItem = NSMenuItem(title: title, action: action, keyEquivalent: key)
-        menuItem.target = self
-        return menuItem
+    @objc private func showLogin() {
+        let controller = LoginViewController.from(storyboard: .main)
+        let panel = NSPanel()
+        panel.contentViewController = controller
+        panel.backgroundColor = .red
+        panel.display()
     }
     
+    // MARK: - private helper
+    
+    private func createItem(title: String, action: Selector?, key: String = "") -> NSMenuItem {
+        let item = NSMenuItem(title: title, action: action, keyEquivalent: key)
+        item.target = self
+        return item
+    }
+
 }
