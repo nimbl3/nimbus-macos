@@ -17,7 +17,7 @@ class Keychain {
         
     }
     
-    private let keychain = KeychainAccess.Keychain(server: Paths.baseURL, protocolType: .https)
+    private let keychain = KeychainAccess.Keychain(server: Paths.PivotalTracker.baseUrl, protocolType: .https)
     
     subscript(_ key: Key) -> String? {
         get { return keychain[key.rawValue] }

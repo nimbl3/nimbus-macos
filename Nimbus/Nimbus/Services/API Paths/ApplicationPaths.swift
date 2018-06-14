@@ -10,58 +10,24 @@ import Foundation
 
 struct Paths {
     
-    #if RELEASE
-    static let baseURL = "https://www.braive.com"
-    #else
-    static let baseURL = "https://staging.braive.com"
-    #endif
-    
-    static let apiPath = "/api/v1"
-    
-    struct Authentication {
+    struct PivotalTracker {
         
-        static var token: String {
-            return baseURL + "/api/oauth/token"
+        static var account: String {
+            return pivotalTracker(path: "account")
         }
         
-        static var revoke: String {
-            return baseURL + "/api/oauth/revoke"
+        static var me: String {
+            return pivotalTracker(path: "me")
         }
         
-        static var resetPassword: String {
-            return baseURL + apiPath + "/passwords"
+        // MARK: - private helper
+        
+        static var baseUrl: String {
+            return "https://www.pivotaltracker.com"
         }
         
-    }
-    
-    struct UserAccount {
-        
-        static var me: String { // swiftlint:disable:this identifier_name
-            return baseURL + apiPath + "/me"
-        }
-        
-        static var surveyScores: String {
-            return baseURL + apiPath + "/k_survey_scores"
-        }
-        
-        static var enrolledCourses: String {
-            return baseURL + apiPath + "/courses"
-        }
-        
-    }
-    
-    struct TreatmentProgram {
-        
-        static func course(id: String) -> String {
-            return baseURL + apiPath + "/courses/\(id)"
-        }
-        
-        static func lesson(id: String) -> String {
-            return baseURL + apiPath + "/lessons/\(id)"
-        }
-        
-        static func completeActivity(id: String) -> String {
-            return baseURL + apiPath + "/activities/\(id)/complete"
+        private static func pivotalTracker(path: String) -> String {
+            return "\(baseUrl)/services/v5/\(path)"
         }
         
     }

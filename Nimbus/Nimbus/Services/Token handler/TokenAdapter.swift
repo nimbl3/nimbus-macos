@@ -19,11 +19,11 @@ final class TokenAdapter: RequestAdapter {
     func adapt(_ urlRequest: URLRequest) throws -> URLRequest {
         guard
             let urlString = urlRequest.url?.absoluteString,
-            urlString.hasPrefix(Paths.baseURL),
+            urlString.hasPrefix(Paths.PivotalTracker.baseUrl),
             let accessToken = credentialsProvider.credentials?.accessToken
         else { return urlRequest }
         var request = urlRequest
-        request.setValue("Bearer \(accessToken)", forHTTPHeaderField: "Authorization")
+        request.setValue("\(accessToken)", forHTTPHeaderField: "X-TrackerToken")
         return request
     }
     

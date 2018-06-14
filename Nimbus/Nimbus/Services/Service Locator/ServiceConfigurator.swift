@@ -18,9 +18,8 @@ class ServiceConfigurator {
         serviceLocator.clearAllServices(includingRequired: false)
         
         let credentialsStorage = serviceLocator.getService(CredentialsStorage.self)
-        let tokenRefresher = TokenRefresher(credentialsProvider: credentialsStorage)
         let tokenAdapter = TokenAdapter(credentialsProvider: credentialsStorage)
-        let requestManager = RequestManager(retrier: tokenRefresher, adapter: tokenAdapter)
+        let requestManager = RequestManager(adapter: tokenAdapter)
         serviceLocator.registerService(requestManager)
     }
     
