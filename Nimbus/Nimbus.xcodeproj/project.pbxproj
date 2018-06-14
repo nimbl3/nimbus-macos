@@ -13,6 +13,7 @@
 		21443F3A20D2501B00114A54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 21443F3920D2501B00114A54 /* Assets.xcassets */; };
 		21443F3D20D2501B00114A54 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21443F3B20D2501B00114A54 /* Main.storyboard */; };
 		21443F4920D2501B00114A54 /* NimbusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21443F4820D2501B00114A54 /* NimbusTests.swift */; };
+		215BFE4920D26AE400F28DDC /* ApplicationFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215BFE4820D26AE400F28DDC /* ApplicationFlowController.swift */; };
 		21FAFC8920D25D5700067899 /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FAFC8820D25D5700067899 /* Credentials.swift */; };
 		21FAFC8D20D25FC100067899 /* ApplicationErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FAFC8C20D25FC100067899 /* ApplicationErrors.swift */; };
 		21FAFCB520D2646900067899 /* CredentialsStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FAFC9220D2646900067899 /* CredentialsStorage.swift */; };
@@ -57,6 +58,7 @@
 		21443F4420D2501B00114A54 /* NimbusTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NimbusTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		21443F4820D2501B00114A54 /* NimbusTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NimbusTests.swift; sourceTree = "<group>"; };
 		21443F4A20D2501B00114A54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		215BFE4820D26AE400F28DDC /* ApplicationFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationFlowController.swift; sourceTree = "<group>"; };
 		21FAFC8820D25D5700067899 /* Credentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credentials.swift; sourceTree = "<group>"; };
 		21FAFC8C20D25FC100067899 /* ApplicationErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationErrors.swift; sourceTree = "<group>"; };
 		21FAFC9220D2646900067899 /* CredentialsStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CredentialsStorage.swift; sourceTree = "<group>"; };
@@ -132,7 +134,6 @@
 				21FAFC3820D25BF700067899 /* Application */,
 				21FAFC3920D25BFD00067899 /* Controllers */,
 				21FAFC8720D25D3D00067899 /* Models */,
-				21FAFC9D20D2646900067899 /* JSON.swift */,
 				21FAFC9020D2646900067899 /* Services */,
 			);
 			path = Nimbus;
@@ -163,6 +164,7 @@
 			isa = PBXGroup;
 			children = (
 				21443F3720D2501900114A54 /* ViewController.swift */,
+				215BFE4820D26AE400F28DDC /* ApplicationFlowController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -171,6 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				21FAFC8820D25D5700067899 /* Credentials.swift */,
+				21FAFC9D20D2646900067899 /* JSON.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -470,6 +473,7 @@
 				21443F3820D2501900114A54 /* ViewController.swift in Sources */,
 				21FAFCCA20D2646900067899 /* Service.swift in Sources */,
 				21FAFCCE20D2646900067899 /* AnyResponseHandlable.swift in Sources */,
+				215BFE4920D26AE400F28DDC /* ApplicationFlowController.swift in Sources */,
 				21FAFCBD20D2646900067899 /* JSON.swift in Sources */,
 				21FAFCB520D2646900067899 /* CredentialsStorage.swift in Sources */,
 				21FAFCC520D2646900067899 /* Request.swift in Sources */,
@@ -640,7 +644,8 @@
 			baseConfigurationReference = C3E24BFCCE9FEF374D158C5D /* Pods-Nimbus.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = Nimbus/Nimbus.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Nimbus/Application/Nimbus.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 4TWS7E2EPE;
@@ -660,7 +665,8 @@
 			baseConfigurationReference = ABE211F95A8BB1B4041F9AA0 /* Pods-Nimbus.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = Nimbus/Nimbus.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Nimbus/Application/Nimbus.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 4TWS7E2EPE;
