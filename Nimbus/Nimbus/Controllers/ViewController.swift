@@ -8,8 +8,8 @@
 
 import Cocoa
 
-class ViewController: NSViewController {
-
+class LoginViewController: NSViewController {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -22,6 +22,6 @@ class ViewController: NSViewController {
         }
     }
 
-
+    
+    
 }
-
