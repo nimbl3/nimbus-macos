@@ -19,15 +19,7 @@
 		21FAFCB620D2646900067899 /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FAFC9320D2646900067899 /* Keychain.swift */; };
 		21FAFCB720D2646900067899 /* TokenAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FAFC9520D2646900067899 /* TokenAdapter.swift */; };
 		21FAFCB820D2646900067899 /* TokenRefresher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FAFC9620D2646900067899 /* TokenRefresher.swift */; };
-		21FAFCB920D2646900067899 /* JSONAPIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FAFC9920D2646900067899 /* JSONAPIError.swift */; };
-		21FAFCBA20D2646900067899 /* Links.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FAFC9A20D2646900067899 /* Links.swift */; };
-		21FAFCBB20D2646900067899 /* JSONAPIObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FAFC9B20D2646900067899 /* JSONAPIObject.swift */; };
-		21FAFCBC20D2646900067899 /* Link.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FAFC9C20D2646900067899 /* Link.swift */; };
 		21FAFCBD20D2646900067899 /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FAFC9D20D2646900067899 /* JSON.swift */; };
-		21FAFCBE20D2646900067899 /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FAFC9E20D2646900067899 /* Resource.swift */; };
-		21FAFCBF20D2646900067899 /* ResourceIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FAFC9F20D2646900067899 /* ResourceIdentifier.swift */; };
-		21FAFCC020D2646900067899 /* Relationship.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FAFCA020D2646900067899 /* Relationship.swift */; };
-		21FAFCC120D2646900067899 /* JSONAPIDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FAFCA120D2646900067899 /* JSONAPIDecoder.swift */; };
 		21FAFCC220D2646900067899 /* RequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FAFCA320D2646900067899 /* RequestManager.swift */; };
 		21FAFCC320D2646900067899 /* CollectionRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FAFCA520D2646900067899 /* CollectionRequest.swift */; };
 		21FAFCC420D2646900067899 /* APIRequestable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FAFCA620D2646900067899 /* APIRequestable.swift */; };
@@ -71,15 +63,7 @@
 		21FAFC9320D2646900067899 /* Keychain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
 		21FAFC9520D2646900067899 /* TokenAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenAdapter.swift; sourceTree = "<group>"; };
 		21FAFC9620D2646900067899 /* TokenRefresher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenRefresher.swift; sourceTree = "<group>"; };
-		21FAFC9920D2646900067899 /* JSONAPIError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONAPIError.swift; sourceTree = "<group>"; };
-		21FAFC9A20D2646900067899 /* Links.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Links.swift; sourceTree = "<group>"; };
-		21FAFC9B20D2646900067899 /* JSONAPIObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONAPIObject.swift; sourceTree = "<group>"; };
-		21FAFC9C20D2646900067899 /* Link.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Link.swift; sourceTree = "<group>"; };
 		21FAFC9D20D2646900067899 /* JSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSON.swift; sourceTree = "<group>"; };
-		21FAFC9E20D2646900067899 /* Resource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
-		21FAFC9F20D2646900067899 /* ResourceIdentifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResourceIdentifier.swift; sourceTree = "<group>"; };
-		21FAFCA020D2646900067899 /* Relationship.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Relationship.swift; sourceTree = "<group>"; };
-		21FAFCA120D2646900067899 /* JSONAPIDecoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONAPIDecoder.swift; sourceTree = "<group>"; };
 		21FAFCA320D2646900067899 /* RequestManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestManager.swift; sourceTree = "<group>"; };
 		21FAFCA520D2646900067899 /* CollectionRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionRequest.swift; sourceTree = "<group>"; };
 		21FAFCA620D2646900067899 /* APIRequestable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRequestable.swift; sourceTree = "<group>"; };
@@ -148,6 +132,7 @@
 				21FAFC3820D25BF700067899 /* Application */,
 				21FAFC3920D25BFD00067899 /* Controllers */,
 				21FAFC8720D25D3D00067899 /* Models */,
+				21FAFC9D20D2646900067899 /* JSON.swift */,
 				21FAFC9020D2646900067899 /* Services */,
 			);
 			path = Nimbus;
@@ -211,7 +196,6 @@
 			children = (
 				21FAFC9120D2646900067899 /* Credentials Storage */,
 				21FAFC9420D2646900067899 /* Token handler */,
-				21FAFC9720D2646900067899 /* JSON API Parser */,
 				21FAFCA220D2646900067899 /* Request Manager */,
 				21FAFCA420D2646900067899 /* Requests */,
 				21FAFCA920D2646900067899 /* API Paths */,
@@ -237,30 +221,6 @@
 				21FAFC9620D2646900067899 /* TokenRefresher.swift */,
 			);
 			path = "Token handler";
-			sourceTree = "<group>";
-		};
-		21FAFC9720D2646900067899 /* JSON API Parser */ = {
-			isa = PBXGroup;
-			children = (
-				21FAFC9820D2646900067899 /* Models */,
-				21FAFCA120D2646900067899 /* JSONAPIDecoder.swift */,
-			);
-			path = "JSON API Parser";
-			sourceTree = "<group>";
-		};
-		21FAFC9820D2646900067899 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				21FAFC9920D2646900067899 /* JSONAPIError.swift */,
-				21FAFC9A20D2646900067899 /* Links.swift */,
-				21FAFC9B20D2646900067899 /* JSONAPIObject.swift */,
-				21FAFC9C20D2646900067899 /* Link.swift */,
-				21FAFC9D20D2646900067899 /* JSON.swift */,
-				21FAFC9E20D2646900067899 /* Resource.swift */,
-				21FAFC9F20D2646900067899 /* ResourceIdentifier.swift */,
-				21FAFCA020D2646900067899 /* Relationship.swift */,
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 		21FAFCA220D2646900067899 /* Request Manager */ = {
@@ -509,33 +469,25 @@
 			files = (
 				21443F3820D2501900114A54 /* ViewController.swift in Sources */,
 				21FAFCCA20D2646900067899 /* Service.swift in Sources */,
-				21FAFCC120D2646900067899 /* JSONAPIDecoder.swift in Sources */,
 				21FAFCCE20D2646900067899 /* AnyResponseHandlable.swift in Sources */,
 				21FAFCBD20D2646900067899 /* JSON.swift in Sources */,
 				21FAFCB520D2646900067899 /* CredentialsStorage.swift in Sources */,
 				21FAFCC520D2646900067899 /* Request.swift in Sources */,
-				21FAFCBF20D2646900067899 /* ResourceIdentifier.swift in Sources */,
 				21FAFCCB20D2646900067899 /* ServiceConfigurator.swift in Sources */,
 				21443F3620D2501900114A54 /* AppDelegate.swift in Sources */,
-				21FAFCBC20D2646900067899 /* Link.swift in Sources */,
 				21FAFC8920D25D5700067899 /* Credentials.swift in Sources */,
 				21FAFC8D20D25FC100067899 /* ApplicationErrors.swift in Sources */,
 				21FAFCC720D2646900067899 /* ApplicationPaths.swift in Sources */,
 				21FAFCCC20D2646900067899 /* ResponseHandler.swift in Sources */,
 				21FAFCC820D2646900067899 /* ServiceProvidable.swift in Sources */,
 				21FAFCC620D2646900067899 /* ApplicationRequests.swift in Sources */,
-				21FAFCBA20D2646900067899 /* Links.swift in Sources */,
 				21FAFCB720D2646900067899 /* TokenAdapter.swift in Sources */,
 				21FAFCC320D2646900067899 /* CollectionRequest.swift in Sources */,
 				21FAFCC920D2646900067899 /* ServiceLocator.swift in Sources */,
-				21FAFCBB20D2646900067899 /* JSONAPIObject.swift in Sources */,
-				21FAFCB920D2646900067899 /* JSONAPIError.swift in Sources */,
 				21FAFCB820D2646900067899 /* TokenRefresher.swift in Sources */,
 				21FAFCB620D2646900067899 /* Keychain.swift in Sources */,
 				21FAFCC220D2646900067899 /* RequestManager.swift in Sources */,
-				21FAFCBE20D2646900067899 /* Resource.swift in Sources */,
 				21FAFCC420D2646900067899 /* APIRequestable.swift in Sources */,
-				21FAFCC020D2646900067899 /* Relationship.swift in Sources */,
 				21FAFCCD20D2646900067899 /* ResponseHandlable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -692,7 +644,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 4TWS7E2EPE;
-				INFOPLIST_FILE = Nimbus/Info.plist;
+				INFOPLIST_FILE = Nimbus/Application/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -712,7 +664,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 4TWS7E2EPE;
-				INFOPLIST_FILE = Nimbus/Info.plist;
+				INFOPLIST_FILE = Nimbus/Application/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",

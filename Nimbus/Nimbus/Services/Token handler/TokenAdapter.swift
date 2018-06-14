@@ -22,9 +22,9 @@ final class TokenAdapter: RequestAdapter {
             urlString.hasPrefix(Paths.baseURL),
             let accessToken = credentialsProvider.credentials?.accessToken
         else { return urlRequest }
-        return urlRequest.customizedCopy {
-            $0.setValue("Bearer \(accessToken)", forHTTPHeaderField: "Authorization")
-        }
+        var request = urlRequest
+        request.setValue("Bearer \(accessToken)", forHTTPHeaderField: "Authorization")
+        return request
     }
     
 }

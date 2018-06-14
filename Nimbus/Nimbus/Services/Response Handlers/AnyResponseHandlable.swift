@@ -14,9 +14,6 @@ extension AnyResponseHandlable {
         return AnyResponseHandlable<T>(ResponseHandler(format: format))
     }
     
-    static var metaOnly: AnyResponseHandlable<JSON> {
-        return AnyResponseHandlable<JSON>(MetaResponseHandler())
-    }
 }
 
 class AnyResponseHandlable<T: Decodable>: ResponseHandlable {
