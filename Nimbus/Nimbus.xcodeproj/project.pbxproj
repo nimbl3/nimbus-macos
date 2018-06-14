@@ -13,25 +13,34 @@
 		21443F3A20D2501B00114A54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 21443F3920D2501B00114A54 /* Assets.xcassets */; };
 		21443F3D20D2501B00114A54 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21443F3B20D2501B00114A54 /* Main.storyboard */; };
 		21443F4920D2501B00114A54 /* NimbusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21443F4820D2501B00114A54 /* NimbusTests.swift */; };
-		21FAFC6820D25C1E00067899 /* CredentialsStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FAFC3D20D25C1E00067899 /* CredentialsStorage.swift */; };
-		21FAFC6920D25C1E00067899 /* TokenAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FAFC3F20D25C1E00067899 /* TokenAdapter.swift */; };
-		21FAFC6A20D25C1E00067899 /* TokenRefresher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FAFC4020D25C1E00067899 /* TokenRefresher.swift */; };
-		21FAFC7620D25C1E00067899 /* RequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FAFC5120D25C1E00067899 /* RequestManager.swift */; };
-		21FAFC7720D25C1E00067899 /* CollectionRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FAFC5320D25C1E00067899 /* CollectionRequest.swift */; };
-		21FAFC7820D25C1E00067899 /* APIRequestable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FAFC5420D25C1E00067899 /* APIRequestable.swift */; };
-		21FAFC7920D25C1E00067899 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FAFC5520D25C1E00067899 /* Request.swift */; };
-		21FAFC7B20D25C1E00067899 /* ApplicationRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FAFC5720D25C1E00067899 /* ApplicationRequests.swift */; };
-		21FAFC7C20D25C1E00067899 /* ApplicationPaths.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FAFC5920D25C1E00067899 /* ApplicationPaths.swift */; };
-		21FAFC7E20D25C1E00067899 /* ServiceProvidable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FAFC5D20D25C1E00067899 /* ServiceProvidable.swift */; };
-		21FAFC7F20D25C1E00067899 /* ServiceLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FAFC5E20D25C1E00067899 /* ServiceLocator.swift */; };
-		21FAFC8020D25C1E00067899 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FAFC5F20D25C1E00067899 /* Service.swift */; };
-		21FAFC8120D25C1E00067899 /* ServiceConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FAFC6020D25C1E00067899 /* ServiceConfigurator.swift */; };
-		21FAFC8220D25C1E00067899 /* ResponseHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FAFC6220D25C1E00067899 /* ResponseHandler.swift */; };
-		21FAFC8320D25C1E00067899 /* ResponseHandlable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FAFC6420D25C1E00067899 /* ResponseHandlable.swift */; };
-		21FAFC8620D25C1E00067899 /* AnyResponseHandlable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FAFC6720D25C1E00067899 /* AnyResponseHandlable.swift */; };
 		21FAFC8920D25D5700067899 /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FAFC8820D25D5700067899 /* Credentials.swift */; };
 		21FAFC8D20D25FC100067899 /* ApplicationErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FAFC8C20D25FC100067899 /* ApplicationErrors.swift */; };
-		21FAFC8F20D2606400067899 /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FAFC8E20D2606400067899 /* Keychain.swift */; };
+		21FAFCB520D2646900067899 /* CredentialsStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FAFC9220D2646900067899 /* CredentialsStorage.swift */; };
+		21FAFCB620D2646900067899 /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FAFC9320D2646900067899 /* Keychain.swift */; };
+		21FAFCB720D2646900067899 /* TokenAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FAFC9520D2646900067899 /* TokenAdapter.swift */; };
+		21FAFCB820D2646900067899 /* TokenRefresher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FAFC9620D2646900067899 /* TokenRefresher.swift */; };
+		21FAFCB920D2646900067899 /* JSONAPIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FAFC9920D2646900067899 /* JSONAPIError.swift */; };
+		21FAFCBA20D2646900067899 /* Links.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FAFC9A20D2646900067899 /* Links.swift */; };
+		21FAFCBB20D2646900067899 /* JSONAPIObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FAFC9B20D2646900067899 /* JSONAPIObject.swift */; };
+		21FAFCBC20D2646900067899 /* Link.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FAFC9C20D2646900067899 /* Link.swift */; };
+		21FAFCBD20D2646900067899 /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FAFC9D20D2646900067899 /* JSON.swift */; };
+		21FAFCBE20D2646900067899 /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FAFC9E20D2646900067899 /* Resource.swift */; };
+		21FAFCBF20D2646900067899 /* ResourceIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FAFC9F20D2646900067899 /* ResourceIdentifier.swift */; };
+		21FAFCC020D2646900067899 /* Relationship.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FAFCA020D2646900067899 /* Relationship.swift */; };
+		21FAFCC120D2646900067899 /* JSONAPIDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FAFCA120D2646900067899 /* JSONAPIDecoder.swift */; };
+		21FAFCC220D2646900067899 /* RequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FAFCA320D2646900067899 /* RequestManager.swift */; };
+		21FAFCC320D2646900067899 /* CollectionRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FAFCA520D2646900067899 /* CollectionRequest.swift */; };
+		21FAFCC420D2646900067899 /* APIRequestable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FAFCA620D2646900067899 /* APIRequestable.swift */; };
+		21FAFCC520D2646900067899 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FAFCA720D2646900067899 /* Request.swift */; };
+		21FAFCC620D2646900067899 /* ApplicationRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FAFCA820D2646900067899 /* ApplicationRequests.swift */; };
+		21FAFCC720D2646900067899 /* ApplicationPaths.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FAFCAA20D2646900067899 /* ApplicationPaths.swift */; };
+		21FAFCC820D2646900067899 /* ServiceProvidable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FAFCAC20D2646900067899 /* ServiceProvidable.swift */; };
+		21FAFCC920D2646900067899 /* ServiceLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FAFCAD20D2646900067899 /* ServiceLocator.swift */; };
+		21FAFCCA20D2646900067899 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FAFCAE20D2646900067899 /* Service.swift */; };
+		21FAFCCB20D2646900067899 /* ServiceConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FAFCAF20D2646900067899 /* ServiceConfigurator.swift */; };
+		21FAFCCC20D2646900067899 /* ResponseHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FAFCB120D2646900067899 /* ResponseHandler.swift */; };
+		21FAFCCD20D2646900067899 /* ResponseHandlable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FAFCB320D2646900067899 /* ResponseHandlable.swift */; };
+		21FAFCCE20D2646900067899 /* AnyResponseHandlable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FAFCB420D2646900067899 /* AnyResponseHandlable.swift */; };
 		8C8C9EA8D16BDEF4838CB249 /* Pods_Nimbus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE73C19DB32E99F2A89C66D6 /* Pods_Nimbus.framework */; };
 /* End PBXBuildFile section */
 
@@ -56,25 +65,34 @@
 		21443F4420D2501B00114A54 /* NimbusTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NimbusTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		21443F4820D2501B00114A54 /* NimbusTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NimbusTests.swift; sourceTree = "<group>"; };
 		21443F4A20D2501B00114A54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		21FAFC3D20D25C1E00067899 /* CredentialsStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CredentialsStorage.swift; sourceTree = "<group>"; };
-		21FAFC3F20D25C1E00067899 /* TokenAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenAdapter.swift; sourceTree = "<group>"; };
-		21FAFC4020D25C1E00067899 /* TokenRefresher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenRefresher.swift; sourceTree = "<group>"; };
-		21FAFC5120D25C1E00067899 /* RequestManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestManager.swift; sourceTree = "<group>"; };
-		21FAFC5320D25C1E00067899 /* CollectionRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionRequest.swift; sourceTree = "<group>"; };
-		21FAFC5420D25C1E00067899 /* APIRequestable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRequestable.swift; sourceTree = "<group>"; };
-		21FAFC5520D25C1E00067899 /* Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
-		21FAFC5720D25C1E00067899 /* ApplicationRequests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationRequests.swift; sourceTree = "<group>"; };
-		21FAFC5920D25C1E00067899 /* ApplicationPaths.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationPaths.swift; sourceTree = "<group>"; };
-		21FAFC5D20D25C1E00067899 /* ServiceProvidable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceProvidable.swift; sourceTree = "<group>"; };
-		21FAFC5E20D25C1E00067899 /* ServiceLocator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceLocator.swift; sourceTree = "<group>"; };
-		21FAFC5F20D25C1E00067899 /* Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
-		21FAFC6020D25C1E00067899 /* ServiceConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceConfigurator.swift; sourceTree = "<group>"; };
-		21FAFC6220D25C1E00067899 /* ResponseHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseHandler.swift; sourceTree = "<group>"; };
-		21FAFC6420D25C1E00067899 /* ResponseHandlable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseHandlable.swift; sourceTree = "<group>"; };
-		21FAFC6720D25C1E00067899 /* AnyResponseHandlable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnyResponseHandlable.swift; sourceTree = "<group>"; };
 		21FAFC8820D25D5700067899 /* Credentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credentials.swift; sourceTree = "<group>"; };
 		21FAFC8C20D25FC100067899 /* ApplicationErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationErrors.swift; sourceTree = "<group>"; };
-		21FAFC8E20D2606400067899 /* Keychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
+		21FAFC9220D2646900067899 /* CredentialsStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CredentialsStorage.swift; sourceTree = "<group>"; };
+		21FAFC9320D2646900067899 /* Keychain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
+		21FAFC9520D2646900067899 /* TokenAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenAdapter.swift; sourceTree = "<group>"; };
+		21FAFC9620D2646900067899 /* TokenRefresher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenRefresher.swift; sourceTree = "<group>"; };
+		21FAFC9920D2646900067899 /* JSONAPIError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONAPIError.swift; sourceTree = "<group>"; };
+		21FAFC9A20D2646900067899 /* Links.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Links.swift; sourceTree = "<group>"; };
+		21FAFC9B20D2646900067899 /* JSONAPIObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONAPIObject.swift; sourceTree = "<group>"; };
+		21FAFC9C20D2646900067899 /* Link.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Link.swift; sourceTree = "<group>"; };
+		21FAFC9D20D2646900067899 /* JSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSON.swift; sourceTree = "<group>"; };
+		21FAFC9E20D2646900067899 /* Resource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
+		21FAFC9F20D2646900067899 /* ResourceIdentifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResourceIdentifier.swift; sourceTree = "<group>"; };
+		21FAFCA020D2646900067899 /* Relationship.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Relationship.swift; sourceTree = "<group>"; };
+		21FAFCA120D2646900067899 /* JSONAPIDecoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONAPIDecoder.swift; sourceTree = "<group>"; };
+		21FAFCA320D2646900067899 /* RequestManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestManager.swift; sourceTree = "<group>"; };
+		21FAFCA520D2646900067899 /* CollectionRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionRequest.swift; sourceTree = "<group>"; };
+		21FAFCA620D2646900067899 /* APIRequestable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRequestable.swift; sourceTree = "<group>"; };
+		21FAFCA720D2646900067899 /* Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		21FAFCA820D2646900067899 /* ApplicationRequests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationRequests.swift; sourceTree = "<group>"; };
+		21FAFCAA20D2646900067899 /* ApplicationPaths.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationPaths.swift; sourceTree = "<group>"; };
+		21FAFCAC20D2646900067899 /* ServiceProvidable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceProvidable.swift; sourceTree = "<group>"; };
+		21FAFCAD20D2646900067899 /* ServiceLocator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceLocator.swift; sourceTree = "<group>"; };
+		21FAFCAE20D2646900067899 /* Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		21FAFCAF20D2646900067899 /* ServiceConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceConfigurator.swift; sourceTree = "<group>"; };
+		21FAFCB120D2646900067899 /* ResponseHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseHandler.swift; sourceTree = "<group>"; };
+		21FAFCB320D2646900067899 /* ResponseHandlable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseHandlable.swift; sourceTree = "<group>"; };
+		21FAFCB420D2646900067899 /* AnyResponseHandlable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnyResponseHandlable.swift; sourceTree = "<group>"; };
 		971B3973F42FBF4FC02D5888 /* Pods-NimbusTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NimbusTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-NimbusTests/Pods-NimbusTests.release.xcconfig"; sourceTree = "<group>"; };
 		A98865455F3A6F6785F8F2BA /* Pods-NimbusTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NimbusTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NimbusTests/Pods-NimbusTests.debug.xcconfig"; sourceTree = "<group>"; };
 		ABE211F95A8BB1B4041F9AA0 /* Pods-Nimbus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nimbus.release.xcconfig"; path = "Pods/Target Support Files/Pods-Nimbus/Pods-Nimbus.release.xcconfig"; sourceTree = "<group>"; };
@@ -130,7 +148,7 @@
 				21FAFC3820D25BF700067899 /* Application */,
 				21FAFC3920D25BFD00067899 /* Controllers */,
 				21FAFC8720D25D3D00067899 /* Models */,
-				21FAFC3B20D25C1E00067899 /* Services */,
+				21FAFC9020D2646900067899 /* Services */,
 			);
 			path = Nimbus;
 			sourceTree = "<group>";
@@ -164,95 +182,6 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
-		21FAFC3B20D25C1E00067899 /* Services */ = {
-			isa = PBXGroup;
-			children = (
-				21FAFC5820D25C1E00067899 /* API Paths */,
-				21FAFC3C20D25C1E00067899 /* Credentials Storage */,
-				21FAFC5020D25C1E00067899 /* Request Manager */,
-				21FAFC5220D25C1E00067899 /* Requests */,
-				21FAFC6120D25C1E00067899 /* Response Handlers */,
-				21FAFC5C20D25C1E00067899 /* Service Locator */,
-				21FAFC3E20D25C1E00067899 /* Token handler */,
-			);
-			name = Services;
-			path = "../../../../braive-ios/Braive/Services";
-			sourceTree = "<group>";
-		};
-		21FAFC3C20D25C1E00067899 /* Credentials Storage */ = {
-			isa = PBXGroup;
-			children = (
-				21FAFC3D20D25C1E00067899 /* CredentialsStorage.swift */,
-				21FAFC8E20D2606400067899 /* Keychain.swift */,
-			);
-			path = "Credentials Storage";
-			sourceTree = "<group>";
-		};
-		21FAFC3E20D25C1E00067899 /* Token handler */ = {
-			isa = PBXGroup;
-			children = (
-				21FAFC3F20D25C1E00067899 /* TokenAdapter.swift */,
-				21FAFC4020D25C1E00067899 /* TokenRefresher.swift */,
-			);
-			path = "Token handler";
-			sourceTree = "<group>";
-		};
-		21FAFC5020D25C1E00067899 /* Request Manager */ = {
-			isa = PBXGroup;
-			children = (
-				21FAFC5120D25C1E00067899 /* RequestManager.swift */,
-			);
-			path = "Request Manager";
-			sourceTree = "<group>";
-		};
-		21FAFC5220D25C1E00067899 /* Requests */ = {
-			isa = PBXGroup;
-			children = (
-				21FAFC5320D25C1E00067899 /* CollectionRequest.swift */,
-				21FAFC5420D25C1E00067899 /* APIRequestable.swift */,
-				21FAFC5520D25C1E00067899 /* Request.swift */,
-				21FAFC5720D25C1E00067899 /* ApplicationRequests.swift */,
-			);
-			path = Requests;
-			sourceTree = "<group>";
-		};
-		21FAFC5820D25C1E00067899 /* API Paths */ = {
-			isa = PBXGroup;
-			children = (
-				21FAFC5920D25C1E00067899 /* ApplicationPaths.swift */,
-			);
-			path = "API Paths";
-			sourceTree = "<group>";
-		};
-		21FAFC5C20D25C1E00067899 /* Service Locator */ = {
-			isa = PBXGroup;
-			children = (
-				21FAFC5D20D25C1E00067899 /* ServiceProvidable.swift */,
-				21FAFC5E20D25C1E00067899 /* ServiceLocator.swift */,
-				21FAFC5F20D25C1E00067899 /* Service.swift */,
-				21FAFC6020D25C1E00067899 /* ServiceConfigurator.swift */,
-			);
-			path = "Service Locator";
-			sourceTree = "<group>";
-		};
-		21FAFC6120D25C1E00067899 /* Response Handlers */ = {
-			isa = PBXGroup;
-			children = (
-				21FAFC6320D25C1E00067899 /* Protocol */,
-				21FAFC6720D25C1E00067899 /* AnyResponseHandlable.swift */,
-				21FAFC6220D25C1E00067899 /* ResponseHandler.swift */,
-			);
-			path = "Response Handlers";
-			sourceTree = "<group>";
-		};
-		21FAFC6320D25C1E00067899 /* Protocol */ = {
-			isa = PBXGroup;
-			children = (
-				21FAFC6420D25C1E00067899 /* ResponseHandlable.swift */,
-			);
-			path = Protocol;
-			sourceTree = "<group>";
-		};
 		21FAFC8720D25D3D00067899 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -275,6 +204,119 @@
 				21FAFC8C20D25FC100067899 /* ApplicationErrors.swift */,
 			);
 			path = Constants;
+			sourceTree = "<group>";
+		};
+		21FAFC9020D2646900067899 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				21FAFC9120D2646900067899 /* Credentials Storage */,
+				21FAFC9420D2646900067899 /* Token handler */,
+				21FAFC9720D2646900067899 /* JSON API Parser */,
+				21FAFCA220D2646900067899 /* Request Manager */,
+				21FAFCA420D2646900067899 /* Requests */,
+				21FAFCA920D2646900067899 /* API Paths */,
+				21FAFCAB20D2646900067899 /* Service Locator */,
+				21FAFCB020D2646900067899 /* Response Handlers */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		21FAFC9120D2646900067899 /* Credentials Storage */ = {
+			isa = PBXGroup;
+			children = (
+				21FAFC9220D2646900067899 /* CredentialsStorage.swift */,
+				21FAFC9320D2646900067899 /* Keychain.swift */,
+			);
+			path = "Credentials Storage";
+			sourceTree = "<group>";
+		};
+		21FAFC9420D2646900067899 /* Token handler */ = {
+			isa = PBXGroup;
+			children = (
+				21FAFC9520D2646900067899 /* TokenAdapter.swift */,
+				21FAFC9620D2646900067899 /* TokenRefresher.swift */,
+			);
+			path = "Token handler";
+			sourceTree = "<group>";
+		};
+		21FAFC9720D2646900067899 /* JSON API Parser */ = {
+			isa = PBXGroup;
+			children = (
+				21FAFC9820D2646900067899 /* Models */,
+				21FAFCA120D2646900067899 /* JSONAPIDecoder.swift */,
+			);
+			path = "JSON API Parser";
+			sourceTree = "<group>";
+		};
+		21FAFC9820D2646900067899 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				21FAFC9920D2646900067899 /* JSONAPIError.swift */,
+				21FAFC9A20D2646900067899 /* Links.swift */,
+				21FAFC9B20D2646900067899 /* JSONAPIObject.swift */,
+				21FAFC9C20D2646900067899 /* Link.swift */,
+				21FAFC9D20D2646900067899 /* JSON.swift */,
+				21FAFC9E20D2646900067899 /* Resource.swift */,
+				21FAFC9F20D2646900067899 /* ResourceIdentifier.swift */,
+				21FAFCA020D2646900067899 /* Relationship.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		21FAFCA220D2646900067899 /* Request Manager */ = {
+			isa = PBXGroup;
+			children = (
+				21FAFCA320D2646900067899 /* RequestManager.swift */,
+			);
+			path = "Request Manager";
+			sourceTree = "<group>";
+		};
+		21FAFCA420D2646900067899 /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				21FAFCA520D2646900067899 /* CollectionRequest.swift */,
+				21FAFCA620D2646900067899 /* APIRequestable.swift */,
+				21FAFCA720D2646900067899 /* Request.swift */,
+				21FAFCA820D2646900067899 /* ApplicationRequests.swift */,
+			);
+			path = Requests;
+			sourceTree = "<group>";
+		};
+		21FAFCA920D2646900067899 /* API Paths */ = {
+			isa = PBXGroup;
+			children = (
+				21FAFCAA20D2646900067899 /* ApplicationPaths.swift */,
+			);
+			path = "API Paths";
+			sourceTree = "<group>";
+		};
+		21FAFCAB20D2646900067899 /* Service Locator */ = {
+			isa = PBXGroup;
+			children = (
+				21FAFCAC20D2646900067899 /* ServiceProvidable.swift */,
+				21FAFCAD20D2646900067899 /* ServiceLocator.swift */,
+				21FAFCAE20D2646900067899 /* Service.swift */,
+				21FAFCAF20D2646900067899 /* ServiceConfigurator.swift */,
+			);
+			path = "Service Locator";
+			sourceTree = "<group>";
+		};
+		21FAFCB020D2646900067899 /* Response Handlers */ = {
+			isa = PBXGroup;
+			children = (
+				21FAFCB120D2646900067899 /* ResponseHandler.swift */,
+				21FAFCB220D2646900067899 /* Protocol */,
+				21FAFCB420D2646900067899 /* AnyResponseHandlable.swift */,
+			);
+			path = "Response Handlers";
+			sourceTree = "<group>";
+		};
+		21FAFCB220D2646900067899 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				21FAFCB320D2646900067899 /* ResponseHandlable.swift */,
+			);
+			path = Protocol;
 			sourceTree = "<group>";
 		};
 		CAC2D823A3CFDD80CE65EE0F /* Pods */ = {
@@ -465,27 +507,36 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				21FAFC8320D25C1E00067899 /* ResponseHandlable.swift in Sources */,
-				21FAFC7620D25C1E00067899 /* RequestManager.swift in Sources */,
-				21FAFC7720D25C1E00067899 /* CollectionRequest.swift in Sources */,
 				21443F3820D2501900114A54 /* ViewController.swift in Sources */,
-				21FAFC7F20D25C1E00067899 /* ServiceLocator.swift in Sources */,
-				21FAFC8020D25C1E00067899 /* Service.swift in Sources */,
-				21FAFC8120D25C1E00067899 /* ServiceConfigurator.swift in Sources */,
-				21FAFC6A20D25C1E00067899 /* TokenRefresher.swift in Sources */,
-				21FAFC8220D25C1E00067899 /* ResponseHandler.swift in Sources */,
+				21FAFCCA20D2646900067899 /* Service.swift in Sources */,
+				21FAFCC120D2646900067899 /* JSONAPIDecoder.swift in Sources */,
+				21FAFCCE20D2646900067899 /* AnyResponseHandlable.swift in Sources */,
+				21FAFCBD20D2646900067899 /* JSON.swift in Sources */,
+				21FAFCB520D2646900067899 /* CredentialsStorage.swift in Sources */,
+				21FAFCC520D2646900067899 /* Request.swift in Sources */,
+				21FAFCBF20D2646900067899 /* ResourceIdentifier.swift in Sources */,
+				21FAFCCB20D2646900067899 /* ServiceConfigurator.swift in Sources */,
 				21443F3620D2501900114A54 /* AppDelegate.swift in Sources */,
-				21FAFC8F20D2606400067899 /* Keychain.swift in Sources */,
-				21FAFC6820D25C1E00067899 /* CredentialsStorage.swift in Sources */,
-				21FAFC7C20D25C1E00067899 /* ApplicationPaths.swift in Sources */,
+				21FAFCBC20D2646900067899 /* Link.swift in Sources */,
 				21FAFC8920D25D5700067899 /* Credentials.swift in Sources */,
-				21FAFC7B20D25C1E00067899 /* ApplicationRequests.swift in Sources */,
-				21FAFC6920D25C1E00067899 /* TokenAdapter.swift in Sources */,
-				21FAFC7820D25C1E00067899 /* APIRequestable.swift in Sources */,
-				21FAFC8620D25C1E00067899 /* AnyResponseHandlable.swift in Sources */,
 				21FAFC8D20D25FC100067899 /* ApplicationErrors.swift in Sources */,
-				21FAFC7E20D25C1E00067899 /* ServiceProvidable.swift in Sources */,
-				21FAFC7920D25C1E00067899 /* Request.swift in Sources */,
+				21FAFCC720D2646900067899 /* ApplicationPaths.swift in Sources */,
+				21FAFCCC20D2646900067899 /* ResponseHandler.swift in Sources */,
+				21FAFCC820D2646900067899 /* ServiceProvidable.swift in Sources */,
+				21FAFCC620D2646900067899 /* ApplicationRequests.swift in Sources */,
+				21FAFCBA20D2646900067899 /* Links.swift in Sources */,
+				21FAFCB720D2646900067899 /* TokenAdapter.swift in Sources */,
+				21FAFCC320D2646900067899 /* CollectionRequest.swift in Sources */,
+				21FAFCC920D2646900067899 /* ServiceLocator.swift in Sources */,
+				21FAFCBB20D2646900067899 /* JSONAPIObject.swift in Sources */,
+				21FAFCB920D2646900067899 /* JSONAPIError.swift in Sources */,
+				21FAFCB820D2646900067899 /* TokenRefresher.swift in Sources */,
+				21FAFCB620D2646900067899 /* Keychain.swift in Sources */,
+				21FAFCC220D2646900067899 /* RequestManager.swift in Sources */,
+				21FAFCBE20D2646900067899 /* Resource.swift in Sources */,
+				21FAFCC420D2646900067899 /* APIRequestable.swift in Sources */,
+				21FAFCC020D2646900067899 /* Relationship.swift in Sources */,
+				21FAFCCD20D2646900067899 /* ResponseHandlable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
