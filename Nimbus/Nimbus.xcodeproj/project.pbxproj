@@ -7,11 +7,32 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0CF5623CEBEC566160D3E282 /* Pods_NimbusTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEF36AFF54B4EFEB10747700 /* Pods_NimbusTests.framework */; };
 		21443F3620D2501900114A54 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21443F3520D2501900114A54 /* AppDelegate.swift */; };
 		21443F3820D2501900114A54 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21443F3720D2501900114A54 /* ViewController.swift */; };
 		21443F3A20D2501B00114A54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 21443F3920D2501B00114A54 /* Assets.xcassets */; };
 		21443F3D20D2501B00114A54 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21443F3B20D2501B00114A54 /* Main.storyboard */; };
 		21443F4920D2501B00114A54 /* NimbusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21443F4820D2501B00114A54 /* NimbusTests.swift */; };
+		21FAFC6820D25C1E00067899 /* CredentialsStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FAFC3D20D25C1E00067899 /* CredentialsStorage.swift */; };
+		21FAFC6920D25C1E00067899 /* TokenAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FAFC3F20D25C1E00067899 /* TokenAdapter.swift */; };
+		21FAFC6A20D25C1E00067899 /* TokenRefresher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FAFC4020D25C1E00067899 /* TokenRefresher.swift */; };
+		21FAFC7620D25C1E00067899 /* RequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FAFC5120D25C1E00067899 /* RequestManager.swift */; };
+		21FAFC7720D25C1E00067899 /* CollectionRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FAFC5320D25C1E00067899 /* CollectionRequest.swift */; };
+		21FAFC7820D25C1E00067899 /* APIRequestable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FAFC5420D25C1E00067899 /* APIRequestable.swift */; };
+		21FAFC7920D25C1E00067899 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FAFC5520D25C1E00067899 /* Request.swift */; };
+		21FAFC7B20D25C1E00067899 /* ApplicationRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FAFC5720D25C1E00067899 /* ApplicationRequests.swift */; };
+		21FAFC7C20D25C1E00067899 /* ApplicationPaths.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FAFC5920D25C1E00067899 /* ApplicationPaths.swift */; };
+		21FAFC7E20D25C1E00067899 /* ServiceProvidable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FAFC5D20D25C1E00067899 /* ServiceProvidable.swift */; };
+		21FAFC7F20D25C1E00067899 /* ServiceLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FAFC5E20D25C1E00067899 /* ServiceLocator.swift */; };
+		21FAFC8020D25C1E00067899 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FAFC5F20D25C1E00067899 /* Service.swift */; };
+		21FAFC8120D25C1E00067899 /* ServiceConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FAFC6020D25C1E00067899 /* ServiceConfigurator.swift */; };
+		21FAFC8220D25C1E00067899 /* ResponseHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FAFC6220D25C1E00067899 /* ResponseHandler.swift */; };
+		21FAFC8320D25C1E00067899 /* ResponseHandlable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FAFC6420D25C1E00067899 /* ResponseHandlable.swift */; };
+		21FAFC8620D25C1E00067899 /* AnyResponseHandlable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FAFC6720D25C1E00067899 /* AnyResponseHandlable.swift */; };
+		21FAFC8920D25D5700067899 /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FAFC8820D25D5700067899 /* Credentials.swift */; };
+		21FAFC8D20D25FC100067899 /* ApplicationErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FAFC8C20D25FC100067899 /* ApplicationErrors.swift */; };
+		21FAFC8F20D2606400067899 /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FAFC8E20D2606400067899 /* Keychain.swift */; };
+		8C8C9EA8D16BDEF4838CB249 /* Pods_Nimbus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE73C19DB32E99F2A89C66D6 /* Pods_Nimbus.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +56,31 @@
 		21443F4420D2501B00114A54 /* NimbusTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NimbusTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		21443F4820D2501B00114A54 /* NimbusTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NimbusTests.swift; sourceTree = "<group>"; };
 		21443F4A20D2501B00114A54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		21FAFC3D20D25C1E00067899 /* CredentialsStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CredentialsStorage.swift; sourceTree = "<group>"; };
+		21FAFC3F20D25C1E00067899 /* TokenAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenAdapter.swift; sourceTree = "<group>"; };
+		21FAFC4020D25C1E00067899 /* TokenRefresher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenRefresher.swift; sourceTree = "<group>"; };
+		21FAFC5120D25C1E00067899 /* RequestManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestManager.swift; sourceTree = "<group>"; };
+		21FAFC5320D25C1E00067899 /* CollectionRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionRequest.swift; sourceTree = "<group>"; };
+		21FAFC5420D25C1E00067899 /* APIRequestable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIRequestable.swift; sourceTree = "<group>"; };
+		21FAFC5520D25C1E00067899 /* Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		21FAFC5720D25C1E00067899 /* ApplicationRequests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationRequests.swift; sourceTree = "<group>"; };
+		21FAFC5920D25C1E00067899 /* ApplicationPaths.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationPaths.swift; sourceTree = "<group>"; };
+		21FAFC5D20D25C1E00067899 /* ServiceProvidable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceProvidable.swift; sourceTree = "<group>"; };
+		21FAFC5E20D25C1E00067899 /* ServiceLocator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceLocator.swift; sourceTree = "<group>"; };
+		21FAFC5F20D25C1E00067899 /* Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		21FAFC6020D25C1E00067899 /* ServiceConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceConfigurator.swift; sourceTree = "<group>"; };
+		21FAFC6220D25C1E00067899 /* ResponseHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseHandler.swift; sourceTree = "<group>"; };
+		21FAFC6420D25C1E00067899 /* ResponseHandlable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseHandlable.swift; sourceTree = "<group>"; };
+		21FAFC6720D25C1E00067899 /* AnyResponseHandlable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnyResponseHandlable.swift; sourceTree = "<group>"; };
+		21FAFC8820D25D5700067899 /* Credentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credentials.swift; sourceTree = "<group>"; };
+		21FAFC8C20D25FC100067899 /* ApplicationErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationErrors.swift; sourceTree = "<group>"; };
+		21FAFC8E20D2606400067899 /* Keychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
+		971B3973F42FBF4FC02D5888 /* Pods-NimbusTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NimbusTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-NimbusTests/Pods-NimbusTests.release.xcconfig"; sourceTree = "<group>"; };
+		A98865455F3A6F6785F8F2BA /* Pods-NimbusTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NimbusTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NimbusTests/Pods-NimbusTests.debug.xcconfig"; sourceTree = "<group>"; };
+		ABE211F95A8BB1B4041F9AA0 /* Pods-Nimbus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nimbus.release.xcconfig"; path = "Pods/Target Support Files/Pods-Nimbus/Pods-Nimbus.release.xcconfig"; sourceTree = "<group>"; };
+		BE73C19DB32E99F2A89C66D6 /* Pods_Nimbus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Nimbus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C3E24BFCCE9FEF374D158C5D /* Pods-Nimbus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Nimbus.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Nimbus/Pods-Nimbus.debug.xcconfig"; sourceTree = "<group>"; };
+		FEF36AFF54B4EFEB10747700 /* Pods_NimbusTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NimbusTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C8C9EA8D16BDEF4838CB249 /* Pods_Nimbus.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -49,6 +96,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0CF5623CEBEC566160D3E282 /* Pods_NimbusTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,8 +107,11 @@
 			isa = PBXGroup;
 			children = (
 				21443F3420D2501900114A54 /* Nimbus */,
+				21443F3B20D2501B00114A54 /* Main.storyboard */,
 				21443F4720D2501B00114A54 /* NimbusTests */,
 				21443F3320D2501900114A54 /* Products */,
+				CAC2D823A3CFDD80CE65EE0F /* Pods */,
+				E5F1AF44E723F24E8C832C9C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -76,12 +127,10 @@
 		21443F3420D2501900114A54 /* Nimbus */ = {
 			isa = PBXGroup;
 			children = (
-				21443F3520D2501900114A54 /* AppDelegate.swift */,
-				21443F3720D2501900114A54 /* ViewController.swift */,
-				21443F3920D2501B00114A54 /* Assets.xcassets */,
-				21443F3B20D2501B00114A54 /* Main.storyboard */,
-				21443F3E20D2501B00114A54 /* Info.plist */,
-				21443F3F20D2501B00114A54 /* Nimbus.entitlements */,
+				21FAFC3820D25BF700067899 /* Application */,
+				21FAFC3920D25BFD00067899 /* Controllers */,
+				21FAFC8720D25D3D00067899 /* Models */,
+				21FAFC3B20D25C1E00067899 /* Services */,
 			);
 			path = Nimbus;
 			sourceTree = "<group>";
@@ -95,6 +144,159 @@
 			path = NimbusTests;
 			sourceTree = "<group>";
 		};
+		21FAFC3820D25BF700067899 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				21FAFC8B20D25FB500067899 /* Constants */,
+				21FAFC8A20D25FAB00067899 /* Resources */,
+				21443F3520D2501900114A54 /* AppDelegate.swift */,
+				21443F3F20D2501B00114A54 /* Nimbus.entitlements */,
+				21443F3E20D2501B00114A54 /* Info.plist */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		21FAFC3920D25BFD00067899 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				21443F3720D2501900114A54 /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		21FAFC3B20D25C1E00067899 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				21FAFC5820D25C1E00067899 /* API Paths */,
+				21FAFC3C20D25C1E00067899 /* Credentials Storage */,
+				21FAFC5020D25C1E00067899 /* Request Manager */,
+				21FAFC5220D25C1E00067899 /* Requests */,
+				21FAFC6120D25C1E00067899 /* Response Handlers */,
+				21FAFC5C20D25C1E00067899 /* Service Locator */,
+				21FAFC3E20D25C1E00067899 /* Token handler */,
+			);
+			name = Services;
+			path = "../../../../braive-ios/Braive/Services";
+			sourceTree = "<group>";
+		};
+		21FAFC3C20D25C1E00067899 /* Credentials Storage */ = {
+			isa = PBXGroup;
+			children = (
+				21FAFC3D20D25C1E00067899 /* CredentialsStorage.swift */,
+				21FAFC8E20D2606400067899 /* Keychain.swift */,
+			);
+			path = "Credentials Storage";
+			sourceTree = "<group>";
+		};
+		21FAFC3E20D25C1E00067899 /* Token handler */ = {
+			isa = PBXGroup;
+			children = (
+				21FAFC3F20D25C1E00067899 /* TokenAdapter.swift */,
+				21FAFC4020D25C1E00067899 /* TokenRefresher.swift */,
+			);
+			path = "Token handler";
+			sourceTree = "<group>";
+		};
+		21FAFC5020D25C1E00067899 /* Request Manager */ = {
+			isa = PBXGroup;
+			children = (
+				21FAFC5120D25C1E00067899 /* RequestManager.swift */,
+			);
+			path = "Request Manager";
+			sourceTree = "<group>";
+		};
+		21FAFC5220D25C1E00067899 /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				21FAFC5320D25C1E00067899 /* CollectionRequest.swift */,
+				21FAFC5420D25C1E00067899 /* APIRequestable.swift */,
+				21FAFC5520D25C1E00067899 /* Request.swift */,
+				21FAFC5720D25C1E00067899 /* ApplicationRequests.swift */,
+			);
+			path = Requests;
+			sourceTree = "<group>";
+		};
+		21FAFC5820D25C1E00067899 /* API Paths */ = {
+			isa = PBXGroup;
+			children = (
+				21FAFC5920D25C1E00067899 /* ApplicationPaths.swift */,
+			);
+			path = "API Paths";
+			sourceTree = "<group>";
+		};
+		21FAFC5C20D25C1E00067899 /* Service Locator */ = {
+			isa = PBXGroup;
+			children = (
+				21FAFC5D20D25C1E00067899 /* ServiceProvidable.swift */,
+				21FAFC5E20D25C1E00067899 /* ServiceLocator.swift */,
+				21FAFC5F20D25C1E00067899 /* Service.swift */,
+				21FAFC6020D25C1E00067899 /* ServiceConfigurator.swift */,
+			);
+			path = "Service Locator";
+			sourceTree = "<group>";
+		};
+		21FAFC6120D25C1E00067899 /* Response Handlers */ = {
+			isa = PBXGroup;
+			children = (
+				21FAFC6320D25C1E00067899 /* Protocol */,
+				21FAFC6720D25C1E00067899 /* AnyResponseHandlable.swift */,
+				21FAFC6220D25C1E00067899 /* ResponseHandler.swift */,
+			);
+			path = "Response Handlers";
+			sourceTree = "<group>";
+		};
+		21FAFC6320D25C1E00067899 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				21FAFC6420D25C1E00067899 /* ResponseHandlable.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		21FAFC8720D25D3D00067899 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				21FAFC8820D25D5700067899 /* Credentials.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		21FAFC8A20D25FAB00067899 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				21443F3920D2501B00114A54 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		21FAFC8B20D25FB500067899 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				21FAFC8C20D25FC100067899 /* ApplicationErrors.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		CAC2D823A3CFDD80CE65EE0F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C3E24BFCCE9FEF374D158C5D /* Pods-Nimbus.debug.xcconfig */,
+				ABE211F95A8BB1B4041F9AA0 /* Pods-Nimbus.release.xcconfig */,
+				A98865455F3A6F6785F8F2BA /* Pods-NimbusTests.debug.xcconfig */,
+				971B3973F42FBF4FC02D5888 /* Pods-NimbusTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		E5F1AF44E723F24E8C832C9C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BE73C19DB32E99F2A89C66D6 /* Pods_Nimbus.framework */,
+				FEF36AFF54B4EFEB10747700 /* Pods_NimbusTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -102,9 +304,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 21443F4D20D2501B00114A54 /* Build configuration list for PBXNativeTarget "Nimbus" */;
 			buildPhases = (
+				4DB274713341159E2B4BBBA5 /* [CP] Check Pods Manifest.lock */,
 				21443F2E20D2501900114A54 /* Sources */,
 				21443F2F20D2501900114A54 /* Frameworks */,
 				21443F3020D2501900114A54 /* Resources */,
+				F849DC4AF54194966131B85E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -119,6 +323,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 21443F5020D2501B00114A54 /* Build configuration list for PBXNativeTarget "NimbusTests" */;
 			buildPhases = (
+				2616CE73B553D19185A6A78E /* [CP] Check Pods Manifest.lock */,
 				21443F4020D2501B00114A54 /* Sources */,
 				21443F4120D2501B00114A54 /* Frameworks */,
 				21443F4220D2501B00114A54 /* Resources */,
@@ -190,13 +395,97 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2616CE73B553D19185A6A78E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-NimbusTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4DB274713341159E2B4BBBA5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Nimbus-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F849DC4AF54194966131B85E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Nimbus/Pods-Nimbus-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework",
+				"${BUILT_PRODUCTS_DIR}/ReactiveCocoa/ReactiveCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/ReactiveSwift/ReactiveSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainAccess.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Nimbus/Pods-Nimbus-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		21443F2E20D2501900114A54 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21FAFC8320D25C1E00067899 /* ResponseHandlable.swift in Sources */,
+				21FAFC7620D25C1E00067899 /* RequestManager.swift in Sources */,
+				21FAFC7720D25C1E00067899 /* CollectionRequest.swift in Sources */,
 				21443F3820D2501900114A54 /* ViewController.swift in Sources */,
+				21FAFC7F20D25C1E00067899 /* ServiceLocator.swift in Sources */,
+				21FAFC8020D25C1E00067899 /* Service.swift in Sources */,
+				21FAFC8120D25C1E00067899 /* ServiceConfigurator.swift in Sources */,
+				21FAFC6A20D25C1E00067899 /* TokenRefresher.swift in Sources */,
+				21FAFC8220D25C1E00067899 /* ResponseHandler.swift in Sources */,
 				21443F3620D2501900114A54 /* AppDelegate.swift in Sources */,
+				21FAFC8F20D2606400067899 /* Keychain.swift in Sources */,
+				21FAFC6820D25C1E00067899 /* CredentialsStorage.swift in Sources */,
+				21FAFC7C20D25C1E00067899 /* ApplicationPaths.swift in Sources */,
+				21FAFC8920D25D5700067899 /* Credentials.swift in Sources */,
+				21FAFC7B20D25C1E00067899 /* ApplicationRequests.swift in Sources */,
+				21FAFC6920D25C1E00067899 /* TokenAdapter.swift in Sources */,
+				21FAFC7820D25C1E00067899 /* APIRequestable.swift in Sources */,
+				21FAFC8620D25C1E00067899 /* AnyResponseHandlable.swift in Sources */,
+				21FAFC8D20D25FC100067899 /* ApplicationErrors.swift in Sources */,
+				21FAFC7E20D25C1E00067899 /* ServiceProvidable.swift in Sources */,
+				21FAFC7920D25C1E00067899 /* Request.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -345,6 +634,7 @@
 		};
 		21443F4E20D2501B00114A54 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C3E24BFCCE9FEF374D158C5D /* Pods-Nimbus.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Nimbus/Nimbus.entitlements;
@@ -364,6 +654,7 @@
 		};
 		21443F4F20D2501B00114A54 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ABE211F95A8BB1B4041F9AA0 /* Pods-Nimbus.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Nimbus/Nimbus.entitlements;
@@ -383,6 +674,7 @@
 		};
 		21443F5120D2501B00114A54 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A98865455F3A6F6785F8F2BA /* Pods-NimbusTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -404,6 +696,7 @@
 		};
 		21443F5220D2501B00114A54 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 971B3973F42FBF4FC02D5888 /* Pods-NimbusTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
