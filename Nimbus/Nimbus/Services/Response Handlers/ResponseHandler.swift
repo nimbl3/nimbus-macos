@@ -34,7 +34,9 @@ class ResponseHandler<ObjectType: Decodable>: ResponseHandlable {
     }
     
     private func decode<T: Decodable>(_ type: T.Type, from data: Data, format: JSONFormatType) throws -> T {
-        return try JSONDecoder().decode(type, from: data)
+        let decoder = JSONDecoder()
+        decoder.keyDecodingStrategy = .convertFromSnakeCase
+        return try decoder.decode(type, from: data)
     }
     
 }

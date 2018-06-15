@@ -43,7 +43,7 @@ struct Request<T: Decodable>: APIRequestable {
          parameters: [String: Any]? = nil,
          headers: [String: String] = [:],
          encoding: ParameterEncoding = JSONEncoding.default,
-         format: JSONFormatType = .jsonAPI) {
+         format: JSONFormatType = .plain) {
         self.path = path
         self.method = method
         self.parameters = parameters
@@ -51,9 +51,7 @@ struct Request<T: Decodable>: APIRequestable {
         self.encoding = encoding
         self.jsonFormat = format
         
-        if case .jsonAPI = format {
-            self.headers["Content-Type"] = "application/vnd.api+json"
-        }
+        self.headers["Content-Type"] = "application/json"
     }
     
 }

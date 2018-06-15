@@ -685,13 +685,69 @@
             <objects>
                 <viewController storyboardIdentifier="LoginViewController" id="XfG-lQ-9wD" customClass="LoginViewController" customModule="Nimbus" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                        <rect key="frame" x="0.0" y="0.0" width="208" height="196"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <textField verticalHuggingPriority="750" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pOc-gr-7bG">
+                                <rect key="frame" x="24" y="130" width="160" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="S3z-Y5-zjL"/>
+                                    <constraint firstAttribute="width" constant="160" id="n4D-FH-6Dn"/>
+                                </constraints>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="center" placeholderString="Email" usesSingleLineMode="YES" bezelStyle="round" id="Mx4-C2-Leq">
+                                    <font key="font" size="16" name="AvenirNext-Regular"/>
+                                    <color key="textColor" red="0.11745037170823461" green="0.11542169700953778" blue="0.12220693005181349" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <secureTextField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="4Rp-W1-2U9">
+                                <rect key="frame" x="24" y="80" width="160" height="30"/>
+                                <secureTextFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" alignment="center" placeholderString="Password" usesSingleLineMode="YES" bezelStyle="round" id="NKC-je-gzA">
+                                    <font key="font" size="16" name="AvenirNext-Regular"/>
+                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                    <allowedInputSourceLocales>
+                                        <string>NSAllRomanInputSourcesLocaleIdentifier</string>
+                                    </allowedInputSourceLocales>
+                                </secureTextFieldCell>
+                            </secureTextField>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="P9v-kH-kW8">
+                                <rect key="frame" x="18" y="23" width="172" height="41"/>
+                                <buttonCell key="cell" type="push" title="Sign in" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="mKe-Es-17J">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" size="16" name="AvenirNext-Medium"/>
+                                    <string key="keyEquivalent" base64-UTF8="YES">
+DQ
+</string>
+                                    <connections>
+                                        <action selector="didSelectSignIn:" target="XfG-lQ-9wD" id="BOs-Ys-NhH"/>
+                                    </connections>
+                                </buttonCell>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="4Rp-W1-2U9" firstAttribute="centerX" secondItem="pOc-gr-7bG" secondAttribute="centerX" id="4z1-Sb-cPc"/>
+                            <constraint firstAttribute="bottom" secondItem="P9v-kH-kW8" secondAttribute="bottom" constant="30" id="8dQ-1C-yNr"/>
+                            <constraint firstItem="P9v-kH-kW8" firstAttribute="width" secondItem="pOc-gr-7bG" secondAttribute="width" id="FxC-E7-mjI"/>
+                            <constraint firstItem="P9v-kH-kW8" firstAttribute="top" secondItem="4Rp-W1-2U9" secondAttribute="bottom" constant="20" id="YvH-fw-2pg"/>
+                            <constraint firstItem="4Rp-W1-2U9" firstAttribute="width" secondItem="pOc-gr-7bG" secondAttribute="width" id="ZsP-Om-VR4"/>
+                            <constraint firstItem="pOc-gr-7bG" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="36" id="a0q-bM-bj1"/>
+                            <constraint firstItem="P9v-kH-kW8" firstAttribute="height" secondItem="pOc-gr-7bG" secondAttribute="height" id="fbY-DJ-bDg"/>
+                            <constraint firstItem="4Rp-W1-2U9" firstAttribute="height" secondItem="pOc-gr-7bG" secondAttribute="height" id="oxX-9T-BHq"/>
+                            <constraint firstItem="P9v-kH-kW8" firstAttribute="centerX" secondItem="pOc-gr-7bG" secondAttribute="centerX" id="sYR-zd-YXd"/>
+                            <constraint firstItem="pOc-gr-7bG" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="uv7-cS-nZu"/>
+                            <constraint firstItem="4Rp-W1-2U9" firstAttribute="top" secondItem="pOc-gr-7bG" secondAttribute="bottom" constant="20" id="z5W-Bb-8ZH"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="pOc-gr-7bG" id="O6I-dJ-aj7"/>
+                        <outlet property="loginButton" destination="P9v-kH-kW8" id="IRl-J4-qaQ"/>
+                        <outlet property="passwordTextField" destination="4Rp-W1-2U9" id="RIT-D6-T3C"/>
+                    </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="98" y="474"/>
+            <point key="canvasLocation" x="-62" y="351"/>
         </scene>
     </scenes>
 </document>

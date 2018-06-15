@@ -8,11 +8,22 @@
 
 import Cocoa
 
+typealias CompletionHandler = () -> Void
+
 class LoginViewController: NSViewController {
+    
+    @IBOutlet weak var emailTextField: NSTextField!
+    @IBOutlet weak var passwordTextField: NSSecureTextField!
+    
+    @IBOutlet weak var loginButton: NSButton!
+    
+    var onSignInWithCredentials: ((_ email: String, _ password: String) -> Void)?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        emailTextField.layer?.cornerRadius = 8.0
+        passwordTextField.layer?.cornerRadius = 8.0
         // Do any additional setup after loading the view.
     }
 
@@ -21,7 +32,12 @@ class LoginViewController: NSViewController {
         // Update the view, if already loaded.
         }
     }
-
     
+    @IBAction func didSelectSignIn(_ sender: Any) {
+        onSignInWithCredentials?(
+            emailTextField.stringValue,
+            passwordTextField.stringValue
+        )
+    }
     
 }

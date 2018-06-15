@@ -7,6 +7,7 @@
 //
 
 import Cocoa
+import ReactiveSwift
 
 class ApplicationFlowController {
     
@@ -15,11 +16,16 @@ class ApplicationFlowController {
     private let accountMenuItem: NSMenuItem
     private var quitMenuItem: NSMenuItem
     
+    private let credentialsStorage = CredentialsStorage()
+    private let manager: RequestManager
+    
     init() {
         accountMenuItem = NSMenuItem(title: "Account", action: nil, keyEquivalent: "")
         quitMenuItem = NSMenuItem(title: "Quit",
                                   action: #selector(NSApplication.terminate),
                                   keyEquivalent: "q")
+        let adapter = TokenAdapter(credentialsProvider: credentialsStorage)
+        manager = RequestManager(adapter: adapter)
     }
     
     func start() {
@@ -60,11 +66,25 @@ class ApplicationFlowController {
     }
     
     @objc private func showLogin() {
+        guard let button = statusItem.button else { return }
         let controller = LoginViewController.from(storyboard: .main)
-        let panel = NSPanel()
-        panel.contentViewController = controller
-        panel.backgroundColor = .red
-        panel.display()
+        controller.onSignInWithCredentials = signIn
+        let popover = NSPopover()
+        popover.behavior = .transient
+        popover.contentViewController = controller
+        popover.show(relativeTo: button.bounds, of: button, preferredEdge: .minY)
+    }
+    
+    private func signIn(username: String, password: String) {
+        let request = Requests.PivotalTracker.login(username: username, password: password)
+        
+        manager.perform(request)
+            .startWithResult {
+                switch $0 {
+                case .success(let account):     print("### \(account)")
+                case .failure(let error):       debugPrint(error)
+                }
+            }
     }
     
     // MARK: - private helper
