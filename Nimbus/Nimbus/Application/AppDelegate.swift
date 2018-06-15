@@ -11,11 +11,11 @@ import Cocoa
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
     
-    private var applicationFlowController: ApplicationFlowController!
+    private var applicationController: ApplicationController!
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        applicationFlowController = ApplicationFlowController()
-        applicationFlowController.start()
+        applicationController = ApplicationController()
+        applicationController.start()
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {

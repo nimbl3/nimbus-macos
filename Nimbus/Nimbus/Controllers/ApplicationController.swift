@@ -1,5 +1,5 @@
 //
-//  ApplicationFlowController.swift
+//  ApplicationController.swift
 //  Nimbus
 //
 //  Created by Pirush Prechathavanich on 6/14/18.
@@ -11,7 +11,7 @@ import ReactiveSwift
 import Result
 import HotKey
 
-class ApplicationFlowController {
+final class ApplicationController {
     
     private let credentialsStorage = CredentialsStorage()
     private let manager: RequestManager
@@ -22,6 +22,11 @@ class ApplicationFlowController {
         return popover
     }()
     
+    // MARK: - controllers
+    
+    private let accountController: AccountMenuController
+    
+    
     // MARK: - menu items
     
     private let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.squareLength)
@@ -30,13 +35,15 @@ class ApplicationFlowController {
     
     private let projectsMenuItem = NSMenuItem(title: "Select project", action: nil, keyEquivalent: "")
     
-    private let accountMenuItem = NSMenuItem(title: "Account", action: nil, keyEquivalent: "")
     private var quitMenuItem = NSMenuItem(title: "Quit",
                                           action: #selector(NSApplication.terminate),
                                           keyEquivalent: "q")
     init() {
         let adapter = TokenAdapter(credentialsProvider: credentialsStorage)
         manager = RequestManager(adapter: adapter)
+        accountController = AccountMenuController(with: manager,
+                                                  credentialsProvider: credentialsStorage,
+                                                  applicationButton: statusItem.button!)
     }
     
     lazy var storyHotkey: HotKey = { HotKey(key: .c, modifiers: [.command, .shift]) }()
@@ -44,8 +51,6 @@ class ApplicationFlowController {
     func start() {
         setupIcon()
         setupMenu()
-        setupAccountMenu()
-        
     }
     
     // MARK: - private setup
@@ -58,19 +63,16 @@ class ApplicationFlowController {
     private func setupMenu() {
         let menu = NSMenu()
         
-        menu.addItem(accountMenuItem)
+        accountController.configure()
+        accountController.items.forEach(menu.addItem)
+        accountController.onSignIn = { [weak self] account in
+            self?.updateMenu(with: account)
+        }
+        
         menu.addItem(NSMenuItem.separator())
         menu.addItem(quitMenuItem)
         
         statusItem.menu = menu
-    }
-    
-    private func setupAccountMenu() {
-        let menu = NSMenu()
-        
-        menu.addItem(createItem(title: "Sign in", action: #selector(showLogin)))
-        
-        accountMenuItem.submenu = menu
     }
     
     // MARK: - action
@@ -173,7 +175,6 @@ class ApplicationFlowController {
         menu.addItem(projectTitleMenuItem)
         menu.addItem(NSMenuItem.separator())
         
-        menu.addItem(accountMenuItem)
         menu.addItem(quitMenuItem)
     }
     
