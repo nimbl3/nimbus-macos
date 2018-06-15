@@ -42,8 +42,8 @@ struct CollectionRequest<T: Decodable>: APIRequestable {
          method: HTTPMethod = .get,
          parameters: [String: Any]? = nil,
          headers: [String: String] = [:],
-         encoding: ParameterEncoding = JSONEncoding.default,
-         format: JSONFormatType = .jsonAPI) {
+         encoding: ParameterEncoding = URLEncoding.default,
+         format: JSONFormatType = .plain) {
         self.path = path
         self.method = method
         self.parameters = parameters
@@ -51,9 +51,7 @@ struct CollectionRequest<T: Decodable>: APIRequestable {
         self.encoding = encoding
         self.jsonFormat = format
         
-        if case .jsonAPI = format {
-            self.headers["Content-Type"] = "application/vnd.api+json"
-        }
+        self.headers["Content-Type"] = "application/json"
     }
     
 }

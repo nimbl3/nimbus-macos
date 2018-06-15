@@ -23,7 +23,7 @@ final class TokenAdapter: RequestAdapter {
             let accessToken = credentialsProvider.credentials?.accessToken
         else { return urlRequest }
         var request = urlRequest
-        request.setValue("\(accessToken)", forHTTPHeaderField: "X-TrackerToken")
+        request.setValue(accessToken, forHTTPHeaderField: "X-TrackerToken")
         return request
     }
     

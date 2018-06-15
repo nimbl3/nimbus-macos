@@ -22,6 +22,14 @@ struct Requests {
             return request
         }
         
+        static func stories(ofProjectId projectId: Int,
+                            withState state: Story.State) -> CollectionRequest<Story> {
+            return CollectionRequest(
+                path: Paths.PivotalTracker.stories(ofProjectId: projectId),
+                parameters: ["with_state": state.rawValue]
+            )
+        }
+        
     }
     
 }

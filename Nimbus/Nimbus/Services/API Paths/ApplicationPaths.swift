@@ -12,12 +12,12 @@ struct Paths {
     
     struct PivotalTracker {
         
-        static var account: String {
-            return pivotalTracker(path: "account")
-        }
-        
         static var me: String {
             return pivotalTracker(path: "me")
+        }
+        
+        static func stories(ofProjectId projectId: Int) -> String {
+            return pivotalTracker(path: "projects/\(projectId)/stories")
         }
         
         // MARK: - private helper
