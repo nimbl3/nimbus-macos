@@ -1,5 +1,5 @@
 //
-//  CopyManager.swift
+//  HotkeyManager.swift
 //  Nimbus
 //
 //  Created by Pirush Prechathavanich on 6/15/18.

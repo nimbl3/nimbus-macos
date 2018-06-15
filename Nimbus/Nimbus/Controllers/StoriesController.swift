@@ -15,6 +15,11 @@ final class StoriesController: MenuController {
     private var disposable: Disposable?
     
     private let projectItem = NSMenuItem(title: "No project selected", action: nil, keyEquivalent: "")
+    private let helpItem = NSMenuItem(
+        title: "- Select a story and use CMD + SHIFT + C.",
+        action: nil,
+        keyEquivalent: ""
+    )
     private var storyItems: [NSMenuItem] = []
     
     private(set) var stories: [Story] = [] {
@@ -45,6 +50,7 @@ final class StoriesController: MenuController {
     
     var items: [NSMenuItem] {
         var items = [projectItem]
+        if !storyItems.isEmpty { items.append(helpItem) }
         items.append(contentsOf: storyItems)
         return items
     }
