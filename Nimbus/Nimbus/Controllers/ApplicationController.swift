@@ -25,7 +25,7 @@ final class ApplicationController {
     // MARK: - controllers
     
     private let accountController: AccountMenuController
-    
+    private let projectController: ProjectController
     
     // MARK: - menu items
     
@@ -41,16 +41,18 @@ final class ApplicationController {
     init() {
         let adapter = TokenAdapter(credentialsProvider: credentialsStorage)
         manager = RequestManager(adapter: adapter)
+        statusItem.menu = NSMenu()
         accountController = AccountMenuController(with: manager,
                                                   credentialsProvider: credentialsStorage,
                                                   applicationButton: statusItem.button!)
+        projectController = ProjectController(with: manager)
     }
     
     lazy var storyHotkey: HotKey = { HotKey(key: .c, modifiers: [.command, .shift]) }()
     
     func start() {
         setupIcon()
-        setupMenu()
+        setupMenu(with: nil)
     }
     
     // MARK: - private setup
@@ -60,55 +62,29 @@ final class ApplicationController {
         button.image = #imageLiteral(resourceName: "icon.post-it")
     }
     
-    private func setupMenu() {
-        let menu = NSMenu()
+    private func setupMenu(with account: Account?) {
+        guard let menu = statusItem.menu else { return }
+        menu.removeAllItems()
+        
+        if let account = account {
+            projectController.configure(with: account.projects)
+            projectController.items.forEach(menu.addItem)
+            projectController.onSelectProject = { _ in
+                
+            }
+        }
         
         accountController.configure()
         accountController.items.forEach(menu.addItem)
         accountController.onSignIn = { [weak self] account in
-            self?.updateMenu(with: account)
+            self?.setupMenu(with: account)
         }
         
         menu.addItem(NSMenuItem.separator())
         menu.addItem(quitMenuItem)
-        
-        statusItem.menu = menu
     }
-    
-    // MARK: - action
-    
-    @objc private func showLogin() {
-        guard let button = statusItem.button else { return }
-        let controller = LoginViewController.from(storyboard: .main)
-        controller.onSignInWithCredentials = signIn
-        popover.contentViewController = controller
-        popover.show(relativeTo: button.bounds, of: button, preferredEdge: .minY)
-    }
-    
-    // MARK: - networking
-    
-    private func signIn(username: String, password: String) {
-        let request = Requests.PivotalTracker.login(username: username, password: password)
-        
-        manager.perform(request)
-            .startWithResult { [weak self] result in
-                switch result {
-                case .success(let account):
-                    self?.saveCredentials(account.apiToken)
-                    self?.updateMenu(with: account)
-                case .failure(let error):
-                    debugPrint(error)
-                }
-            }
-    }
-    
-    
     
     // MARK: - private helper
-    
-    private func saveCredentials(_ accessToken: String) {
-        credentialsStorage.acceptNewCredentials(Credentials(accessToken: accessToken))
-    }
     
     private func fetchStories(of project: Project) {
         let request = Requests.PivotalTracker.stories(ofProjectId: project.projectId,

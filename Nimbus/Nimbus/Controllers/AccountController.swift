@@ -37,8 +37,6 @@ final class AccountMenuController: MenuController {
     var onSignIn: ((Account) -> Void)?
     var onSignOut: CompletionHandler?
     
-    
-    
     private lazy var popover: NSPopover = {
         let popover = NSPopover()
         popover.behavior = .transient
