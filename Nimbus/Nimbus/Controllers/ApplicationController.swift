@@ -26,6 +26,7 @@ final class ApplicationController {
     
     private let accountController: AccountMenuController
     private let projectController: ProjectController
+    private let storiesController: StoriesController
     
     // MARK: - menu items
     
@@ -46,6 +47,7 @@ final class ApplicationController {
                                                   credentialsProvider: credentialsStorage,
                                                   applicationButton: statusItem.button!)
         projectController = ProjectController(with: manager)
+        storiesController = StoriesController(with: manager)
     }
     
     lazy var storyHotkey: HotKey = { HotKey(key: .c, modifiers: [.command, .shift]) }()
@@ -69,9 +71,17 @@ final class ApplicationController {
         if let account = account {
             projectController.configure(with: account.projects)
             projectController.items.forEach(menu.addItem)
-            projectController.onSelectProject = { _ in
-                
+            projectController.onSelectProject = { [weak self] project in
+                self?.storiesController.configure(with: project)
             }
+            
+            menu.addItem(.separator())
+            
+            storiesController.items.forEach(menu.addItem)
+            storiesController.onUpdateStories = { [weak self] _ in self?.setupMenu(with: account) }
+            storiesController.onSelectStory = nil
+            
+            menu.addItem(.separator())
         }
         
         accountController.configure()
@@ -80,7 +90,6 @@ final class ApplicationController {
             self?.setupMenu(with: account)
         }
         
-        menu.addItem(NSMenuItem.separator())
         menu.addItem(quitMenuItem)
     }
     
@@ -145,7 +154,6 @@ final class ApplicationController {
         menu.insertItem(fetchMenuItem, at: 0)
         
         menu.addItem(projectsMenuItem)
-        configureProjectsMenu(with: account.projects)
         
         menu.addItem(NSMenuItem.separator())
         menu.addItem(projectTitleMenuItem)
@@ -165,25 +173,6 @@ final class ApplicationController {
             guard let project = selectedProject else { return }
             fetchStories(of: project)
         }
-    }
-    
-    private func configureProjectsMenu(with projects: [Project]) {
-        let menu = NSMenu()
-        self.projects = projects
-        projects.forEach {
-            let item = createItem(title: $0.projectName, action: #selector(selectProject))
-            menu.addItem(item)
-        }
-        projectsMenuItem.submenu = menu
-    }
-    
-    @objc private func selectProject(_ item: NSMenuItem) {
-        projectsMenuItem.submenu?.items.enumerated()
-            .forEach {
-                $1.state = .off
-                if $1 == item { selectedProject = projects[$0] }
-            }
-        item.state = .on
     }
     
     private func createItem(title: String, action: Selector?, key: String = "") -> NSMenuItem {

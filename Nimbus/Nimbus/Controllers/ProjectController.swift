@@ -8,14 +8,18 @@
 
 import Cocoa
 
-class ProjectController: MenuController {
+final class ProjectController: MenuController {
     
     private let manager: RequestManager
     
     private let projectsItem = NSMenuItem(title: "Select project", action: nil, keyEquivalent: "")
     private let submenu = NSMenu()
     
-    private let projects: [Project] = []
+    private var projects: [Project] = [] {
+        didSet { update(with: projects) }
+    }
+    
+    // MARK: - selected properties
     
     private var selectedProjectItem: NSMenuItem? {
         didSet { selectedProject = projects.first { $0.projectName == selectedProjectItem?.title } }
@@ -43,11 +47,7 @@ class ProjectController: MenuController {
     
     func configure(with projects: [Project]) {
         submenu.removeAllItems()
-        
-        projects.forEach {
-            let item = createItem(title: $0.projectName, action: #selector(selectProject))
-            submenu.addItem(item)
-        }
+        self.projects = projects
     }
     
     // MARK: - action
@@ -60,6 +60,14 @@ class ProjectController: MenuController {
     
     // MARK: - privete helper
     
-    
+    private func update(with projects: [Project]) {
+        projects.forEach {
+            let item = createItem(title: $0.projectName, action: #selector(selectProject))
+            if $0.projectId == selectedProject?.projectId {
+                item.state = .on
+            }
+            submenu.addItem(item)
+        }
+    }
     
 }

@@ -13,6 +13,7 @@
 		212A729C20D36F27009F2184 /* Story.swift in Sources */ = {isa = PBXBuildFile; fileRef = 212A729B20D36F27009F2184 /* Story.swift */; };
 		212A729E20D3A227009F2184 /* AccountController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 212A729D20D3A227009F2184 /* AccountController.swift */; };
 		212A72A020D3A279009F2184 /* ProjectController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 212A729F20D3A279009F2184 /* ProjectController.swift */; };
+		212A72A220D3A7A3009F2184 /* StoriesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 212A72A120D3A7A3009F2184 /* StoriesController.swift */; };
 		21443F3620D2501900114A54 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21443F3520D2501900114A54 /* AppDelegate.swift */; };
 		21443F3820D2501900114A54 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21443F3720D2501900114A54 /* ViewController.swift */; };
 		21443F3A20D2501B00114A54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 21443F3920D2501B00114A54 /* Assets.xcassets */; };
@@ -58,6 +59,7 @@
 		212A729B20D36F27009F2184 /* Story.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Story.swift; sourceTree = "<group>"; };
 		212A729D20D3A227009F2184 /* AccountController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountController.swift; sourceTree = "<group>"; };
 		212A729F20D3A279009F2184 /* ProjectController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectController.swift; sourceTree = "<group>"; };
+		212A72A120D3A7A3009F2184 /* StoriesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoriesController.swift; sourceTree = "<group>"; };
 		21443F3220D2501900114A54 /* Nimbus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nimbus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		21443F3520D2501900114A54 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		21443F3720D2501900114A54 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -186,6 +188,7 @@
 				215BFE4820D26AE400F28DDC /* ApplicationController.swift */,
 				212A729D20D3A227009F2184 /* AccountController.swift */,
 				212A729F20D3A279009F2184 /* ProjectController.swift */,
+				212A72A120D3A7A3009F2184 /* StoriesController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -510,6 +513,7 @@
 				21FAFCB520D2646900067899 /* CredentialsStorage.swift in Sources */,
 				21FAFCC520D2646900067899 /* Request.swift in Sources */,
 				212A72A020D3A279009F2184 /* ProjectController.swift in Sources */,
+				212A72A220D3A7A3009F2184 /* StoriesController.swift in Sources */,
 				21FAFCCB20D2646900067899 /* ServiceConfigurator.swift in Sources */,
 				21443F3620D2501900114A54 /* AppDelegate.swift in Sources */,
 				21FAFC8920D25D5700067899 /* Credentials.swift in Sources */,
