@@ -132,7 +132,7 @@ class ApplicationFlowController {
             let menu = statusItem.menu,
             let index = menu.items.index(of: projectTitleMenuItem)
         else { return }
-        projectTitleMenuItem.title = "> \(project.projectName)"
+        projectTitleMenuItem.title = project.projectName
         stories.enumerated().forEach {
             let item = createItem(title: $1.name, action: #selector(focusStory))
             menu.insertItem(item, at: (index + 1) + $0)
@@ -151,6 +151,12 @@ class ApplicationFlowController {
             let pasteboard = NSPasteboard.general
             pasteboard.clearContents()
             pasteboard.setString("\(story.id)", forType: .string)
+            
+            let notification = NSUserNotification()
+            notification.title = story.name
+            notification.informativeText = "The story's ID has been copied to your clipboard"
+            notification.soundName = NSUserNotificationDefaultSoundName
+            NSUserNotificationCenter.default.deliver(notification)
         }
     }
     
