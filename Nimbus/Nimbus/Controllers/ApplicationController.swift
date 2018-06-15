@@ -28,7 +28,7 @@ final class ApplicationController {
     
     private let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.squareLength)
     
-    private let fetchMenuItem = NSMenuItem(title: "Fetch", action: nil, keyEquivalent: "F")
+    private let fetchMenuItem = NSMenuItem(title: "Fetch", action: #selector(fetch), keyEquivalent: "F")
     private var quitMenuItem = NSMenuItem(
         title: "Quit",
         action: #selector(NSApplication.terminate),
@@ -50,6 +50,7 @@ final class ApplicationController {
     
     func start() {
         setupIcon()
+        setupFetchItem()
         setupMenu(with: nil)
     }
     
@@ -60,11 +61,17 @@ final class ApplicationController {
         button.image = #imageLiteral(resourceName: "icon.post-it")
     }
     
+    private func setupFetchItem() {
+        fetchMenuItem.target = self
+    }
+    
     private func setupMenu(with account: Account?) {
         guard let menu = statusItem.menu else { return }
         menu.removeAllItems()
         
         if let account = account {
+            menu.addItem(fetchMenuItem)
+            
             projectController.configure(with: account.projects)
             projectController.items.forEach(menu.addItem)
             projectController.onSelectProject = { [weak self] project in
@@ -91,6 +98,26 @@ final class ApplicationController {
         }
         
         menu.addItem(quitMenuItem)
+    }
+    
+    // MARK: - private helper
+    
+    private var disposable: Disposable?
+    
+    private lazy var fetchProducer: SignalProducer<Account, Errors.Network> = {
+        let request = Requests.PivotalTracker.me
+        return manager.perform(request)
+    }()
+    
+    @objc private func fetch(_ item: NSMenuItem) {
+        disposable?.dispose()
+        disposable = fetchProducer
+            .startWithResult { [weak self] result in
+                switch result {
+                case .success(let account):     self?.setupMenu(with: account)
+                case .failure(let error):       debugPrint(error)
+                }
+            }
     }
     
 }

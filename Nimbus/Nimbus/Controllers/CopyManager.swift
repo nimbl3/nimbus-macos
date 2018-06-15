@@ -20,6 +20,8 @@ final class HotkeyManager {
         }
     }
     
+    // MARK: - private helper
+    
     private func copyToPasteboard(_ text: String) {
         let pasteboard = NSPasteboard.general
         pasteboard.clearContents()

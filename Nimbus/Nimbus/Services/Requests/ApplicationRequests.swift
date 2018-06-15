@@ -11,6 +11,10 @@ import Foundation
 struct Requests {
     
     struct PivotalTracker {
+        
+        static var me: Request<Account> {
+            return Request(path: Paths.PivotalTracker.me)
+        }
     
         static func login(username: String, password: String) -> Request<Account> {
             var request = Request<Account>(path: Paths.PivotalTracker.me)
