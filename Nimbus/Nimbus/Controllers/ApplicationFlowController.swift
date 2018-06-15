@@ -8,22 +8,25 @@
 
 import Cocoa
 import ReactiveSwift
+import Result
 
 class ApplicationFlowController {
     
     private let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.squareLength)
     
-    private let accountMenuItem: NSMenuItem
-    private var quitMenuItem: NSMenuItem
+    private let fetchMenuItem = NSMenuItem(title: "Fetch", action: nil, keyEquivalent: "F")
+    
+    private let projectsMenuItem = NSMenuItem(title: "Select project", action: nil, keyEquivalent: "")
+    
+    private let accountMenuItem = NSMenuItem(title: "Account", action: nil, keyEquivalent: "")
+    private var quitMenuItem = NSMenuItem(title: "Quit",
+                                          action: #selector(NSApplication.terminate),
+                                          keyEquivalent: "q")
     
     private let credentialsStorage = CredentialsStorage()
     private let manager: RequestManager
     
     init() {
-        accountMenuItem = NSMenuItem(title: "Account", action: nil, keyEquivalent: "")
-        quitMenuItem = NSMenuItem(title: "Quit",
-                                  action: #selector(NSApplication.terminate),
-                                  keyEquivalent: "q")
         let adapter = TokenAdapter(credentialsProvider: credentialsStorage)
         manager = RequestManager(adapter: adapter)
     }
@@ -61,6 +64,12 @@ class ApplicationFlowController {
     
     // MARK: - action
     
+    private lazy var popover: NSPopover = {
+        let popover = NSPopover()
+        popover.behavior = .transient
+        return popover
+    }()
+    
     @objc private func printSomething(_ sender: NSMenuItem) {
         print("### item: \(sender.title)")
     }
@@ -69,25 +78,89 @@ class ApplicationFlowController {
         guard let button = statusItem.button else { return }
         let controller = LoginViewController.from(storyboard: .main)
         controller.onSignInWithCredentials = signIn
-        let popover = NSPopover()
-        popover.behavior = .transient
         popover.contentViewController = controller
         popover.show(relativeTo: button.bounds, of: button, preferredEdge: .minY)
     }
+    
+    // MARK: - networking
     
     private func signIn(username: String, password: String) {
         let request = Requests.PivotalTracker.login(username: username, password: password)
         
         manager.perform(request)
-            .startWithResult {
-                switch $0 {
-                case .success(let account):     print("### \(account)")
-                case .failure(let error):       debugPrint(error)
+            .startWithResult { [weak self] result in
+                switch result {
+                case .success(let account):
+                    self?.saveCredentials(account.apiToken)
+                    self?.updateMenu(with: account)
+                case .failure(let error):
+                    debugPrint(error)
                 }
             }
     }
     
+    
+    
     // MARK: - private helper
+    
+    private func saveCredentials(_ accessToken: String) {
+        credentialsStorage.acceptNewCredentials(Credentials(accessToken: accessToken))
+    }
+    
+    private func fetchProject(id: Int) {
+        let request = Requests.PivotalTracker.stories(ofProjectId: id, withState: .started)
+        manager.perform(request)
+            .startWithResult { [weak self] result in
+                switch result {
+                case .success(let stories):
+                    debugPrint("### stories", stories)
+                case .failure(let error):
+                    debugPrint("### error", error)
+                }
+        }
+    }
+    
+    private func updateMenu(with account: Account) {
+        guard let menu = statusItem.menu else { return }
+        menu.removeAllItems()
+        
+        menu.insertItem(fetchMenuItem, at: 0)
+        
+        menu.addItem(projectsMenuItem)
+        configureProjectsMenu(with: account.projects)
+        
+        menu.addItem(accountMenuItem)
+        menu.addItem(quitMenuItem)
+    }
+    
+    // MARK: - private configuration
+    
+    private var projects: [Project] = []
+    private var selectedProject: Project? {
+        didSet {
+            guard let project = selectedProject else { return }
+            fetchProject(id: project.projectId)
+        }
+    }
+    
+    private func configureProjectsMenu(with projects: [Project]) {
+        let menu = NSMenu()
+        self.projects = projects
+        projects.forEach {
+            let item = createItem(title: $0.projectName, action: #selector(selectProject))
+            menu.addItem(item)
+        }
+        projectsMenuItem.submenu = menu
+    }
+    
+    @objc private func selectProject(_ item: NSMenuItem) {
+        projectsMenuItem.submenu?.items.enumerated()
+            .forEach {
+                $1.state = .off
+                if $1 == item { selectedProject = projects[$0] }
+            }
+        item.state = .on
+    }
     
     private func createItem(title: String, action: Selector?, key: String = "") -> NSMenuItem {
         let item = NSMenuItem(title: title, action: action, keyEquivalent: key)
