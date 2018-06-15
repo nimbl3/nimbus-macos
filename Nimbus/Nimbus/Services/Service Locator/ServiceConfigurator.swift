@@ -24,21 +24,3 @@ class ServiceConfigurator {
     }
     
 }
-
-struct Account: Codable {
-    
-    let id: Int
-    let name: String
-    let username: String
-    let apiToken: String
-    
-    let projects: [Project]
-    
-}
-
-struct Project: Codable {
-    
-    let projectId: Int
-    let projectName: String
-    
-}

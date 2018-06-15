@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		0CF5623CEBEC566160D3E282 /* Pods_NimbusTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEF36AFF54B4EFEB10747700 /* Pods_NimbusTests.framework */; };
+		212A729820D36F17009F2184 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 212A729720D36F17009F2184 /* Account.swift */; };
+		212A729A20D36F1F009F2184 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 212A729920D36F1F009F2184 /* Project.swift */; };
+		212A729C20D36F27009F2184 /* Story.swift in Sources */ = {isa = PBXBuildFile; fileRef = 212A729B20D36F27009F2184 /* Story.swift */; };
 		21443F3620D2501900114A54 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21443F3520D2501900114A54 /* AppDelegate.swift */; };
 		21443F3820D2501900114A54 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21443F3720D2501900114A54 /* ViewController.swift */; };
 		21443F3A20D2501B00114A54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 21443F3920D2501B00114A54 /* Assets.xcassets */; };
@@ -48,6 +51,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		212A729720D36F17009F2184 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
+		212A729920D36F1F009F2184 /* Project.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
+		212A729B20D36F27009F2184 /* Story.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Story.swift; sourceTree = "<group>"; };
 		21443F3220D2501900114A54 /* Nimbus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nimbus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		21443F3520D2501900114A54 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		21443F3720D2501900114A54 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -183,6 +189,9 @@
 			children = (
 				21FAFC8820D25D5700067899 /* Credentials.swift */,
 				21FAFC9D20D2646900067899 /* JSON.swift */,
+				212A729720D36F17009F2184 /* Account.swift */,
+				212A729920D36F1F009F2184 /* Project.swift */,
+				212A729B20D36F27009F2184 /* Story.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -486,8 +495,10 @@
 				21443F3820D2501900114A54 /* ViewController.swift in Sources */,
 				21FAFCCA20D2646900067899 /* Service.swift in Sources */,
 				21FAFCCE20D2646900067899 /* AnyResponseHandlable.swift in Sources */,
+				212A729A20D36F1F009F2184 /* Project.swift in Sources */,
 				215BFE4920D26AE400F28DDC /* ApplicationFlowController.swift in Sources */,
 				21FAFCBD20D2646900067899 /* JSON.swift in Sources */,
+				212A729820D36F17009F2184 /* Account.swift in Sources */,
 				21FAFCB520D2646900067899 /* CredentialsStorage.swift in Sources */,
 				21FAFCC520D2646900067899 /* Request.swift in Sources */,
 				21FAFCCB20D2646900067899 /* ServiceConfigurator.swift in Sources */,
@@ -502,6 +513,7 @@
 				21FAFCB720D2646900067899 /* TokenAdapter.swift in Sources */,
 				21FAFCC320D2646900067899 /* CollectionRequest.swift in Sources */,
 				21FAFCC920D2646900067899 /* ServiceLocator.swift in Sources */,
+				212A729C20D36F27009F2184 /* Story.swift in Sources */,
 				21FAFCB620D2646900067899 /* Keychain.swift in Sources */,
 				21FAFCC220D2646900067899 /* RequestManager.swift in Sources */,
 				21FAFCC420D2646900067899 /* APIRequestable.swift in Sources */,
