@@ -9,6 +9,7 @@ target 'Nimbus' do
   pod 'Alamofire'
   pod 'ReactiveCocoa'
   pod 'KeychainAccess'
+  pod 'HotKey'
 
   target 'NimbusTests' do
     inherit! :search_paths

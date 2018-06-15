@@ -9,8 +9,20 @@
 import Cocoa
 import ReactiveSwift
 import Result
+import HotKey
 
 class ApplicationFlowController {
+    
+    private let credentialsStorage = CredentialsStorage()
+    private let manager: RequestManager
+    
+    private lazy var popover: NSPopover = {
+        let popover = NSPopover()
+        popover.behavior = .transient
+        return popover
+    }()
+    
+    // MARK: - menu items
     
     private let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.squareLength)
     
@@ -22,19 +34,18 @@ class ApplicationFlowController {
     private var quitMenuItem = NSMenuItem(title: "Quit",
                                           action: #selector(NSApplication.terminate),
                                           keyEquivalent: "q")
-    
-    private let credentialsStorage = CredentialsStorage()
-    private let manager: RequestManager
-    
     init() {
         let adapter = TokenAdapter(credentialsProvider: credentialsStorage)
         manager = RequestManager(adapter: adapter)
     }
     
+    lazy var storyHotkey: HotKey = { HotKey(key: .c, modifiers: [.command, .shift]) }()
+    
     func start() {
         setupIcon()
         setupMenu()
         setupAccountMenu()
+        
     }
     
     // MARK: - private setup
@@ -63,16 +74,6 @@ class ApplicationFlowController {
     }
     
     // MARK: - action
-    
-    private lazy var popover: NSPopover = {
-        let popover = NSPopover()
-        popover.behavior = .transient
-        return popover
-    }()
-    
-    @objc private func printSomething(_ sender: NSMenuItem) {
-        print("### item: \(sender.title)")
-    }
     
     @objc private func showLogin() {
         guard let button = statusItem.button else { return }
@@ -107,16 +108,49 @@ class ApplicationFlowController {
         credentialsStorage.acceptNewCredentials(Credentials(accessToken: accessToken))
     }
     
-    private func fetchProject(id: Int) {
-        let request = Requests.PivotalTracker.stories(ofProjectId: id, withState: .started)
+    private func fetchStories(of project: Project) {
+        let request = Requests.PivotalTracker.stories(ofProjectId: project.projectId,
+                                                      withState: .started)
         manager.perform(request)
             .startWithResult { [weak self] result in
                 switch result {
                 case .success(let stories):
-                    debugPrint("### stories", stories)
+                    self?.stories = stories
+                    self?.updateStoriesMenu(of: project, with: stories)
                 case .failure(let error):
                     debugPrint("### error", error)
                 }
+        }
+    }
+    
+    private let projectTitleMenuItem = NSMenuItem(title: "No project selected", action: nil, keyEquivalent: "")
+    private var selectedStoryItem: NSMenuItem?
+    
+    
+    private func updateStoriesMenu(of project: Project, with stories: [Story]) {
+        guard
+            let menu = statusItem.menu,
+            let index = menu.items.index(of: projectTitleMenuItem)
+        else { return }
+        projectTitleMenuItem.title = "> \(project.projectName)"
+        stories.enumerated().forEach {
+            let item = createItem(title: $1.name, action: #selector(focusStory))
+            menu.insertItem(item, at: (index + 1) + $0)
+        }
+    }
+    
+    @objc private func focusStory(_ item: NSMenuItem) {
+        guard let story = stories.first(where: { $0.name == item.title }) else { return }
+
+        selectedStory = story
+        selectedStoryItem?.state = .off
+        selectedStoryItem = item
+        
+        item.state = .on
+        storyHotkey.keyDownHandler = {
+            let pasteboard = NSPasteboard.general
+            pasteboard.clearContents()
+            pasteboard.setString("\(story.id)", forType: .string)
         }
     }
     
@@ -129,17 +163,24 @@ class ApplicationFlowController {
         menu.addItem(projectsMenuItem)
         configureProjectsMenu(with: account.projects)
         
+        menu.addItem(NSMenuItem.separator())
+        menu.addItem(projectTitleMenuItem)
+        menu.addItem(NSMenuItem.separator())
+        
         menu.addItem(accountMenuItem)
         menu.addItem(quitMenuItem)
     }
     
     // MARK: - private configuration
     
+    private var stories: [Story] = []
+    private var selectedStory: Story?
+    
     private var projects: [Project] = []
     private var selectedProject: Project? {
         didSet {
             guard let project = selectedProject else { return }
-            fetchProject(id: project.projectId)
+            fetchStories(of: project)
         }
     }
     
