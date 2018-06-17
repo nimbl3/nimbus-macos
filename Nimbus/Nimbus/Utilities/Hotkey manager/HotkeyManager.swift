@@ -35,3 +35,26 @@ final class HotkeyManager {
         NSUserNotificationCenter.default.deliver(notification)
     }
 }
+
+final class CopyManager {
+    
+    private let pasteboard = NSPasteboard.general
+    
+    func copyToPasteboard(_ text: String) {
+        pasteboard.clearContents()
+        pasteboard.setString(text, forType: .string)
+    }
+    
+}
+
+final class NotificationManager {
+    
+    private let notificationCenter = NSUserNotificationCenter.default
+    
+    func notify(title: String? = nil, text: String? = nil) {
+        let notification = NSUserNotification()
+        notification.title = title
+        notification.informativeText = text
+        notificationCenter.deliver(notification)
+    }
+}

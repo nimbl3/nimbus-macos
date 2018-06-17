@@ -11,6 +11,8 @@ import Cocoa
 final class TemplateController: MenuController {
     
     private let storage = LocalStorage()
+    private let copyManager: CopyManager
+    private let notificationManager: NotificationManager
     
     private let titleItem = NSMenuItem(title: "Template")
     private let addItem = NSMenuItem(title: "Add template...")
@@ -23,7 +25,10 @@ final class TemplateController: MenuController {
     
     var onUpdateTemplates: (([Template]) -> Void)?
     
-    init() {}
+    init(with copyManager: CopyManager, and notificationManager: NotificationManager) {
+        self.copyManager = copyManager
+        self.notificationManager = notificationManager
+    }
     
     // MARK: - menu controller
     
@@ -50,12 +55,36 @@ final class TemplateController: MenuController {
     
     @objc private func copyTemplate(_ item: NSMenuItem) {
         guard let template = item.representedObject as? Template else { return }
-        print("### \(template.name): \(template.content)")
+        copyManager.copyToPasteboard(template.content)
+        notificationManager.notify(
+            title: template.name,
+            text: "The template's content has been copied to your clipboard"
+        )
     }
     
     private func fetchTemplates() {
-        templates = storage.get(.templates) ?? [:]
-        print("### Templates", templates)
+        var templates = storage.get(.templates) ?? [:]
+        //todo:- remove
+        templates["PR template"] = Template(
+            name: "PR template",
+            content: """
+            https://www.pivotaltracker.com/story/show/
+            
+            ### **What Happened**
+            
+            Some detail goes here...
+            
+            ### **Insight**
+            
+            Some detail goes here...
+            
+            ### **Proof of Work**
+            
+            ![alt text](https://link.com)
+            """
+        )
+        
+        self.templates = templates
     }
     
     private func saveTemplate(name: String, _ content: String) {
