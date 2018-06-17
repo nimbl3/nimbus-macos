@@ -23,6 +23,11 @@
 		215BFE4920D26AE400F28DDC /* ApplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215BFE4820D26AE400F28DDC /* ApplicationController.swift */; };
 		215BFE4C20D27C7200F28DDC /* NSViewController+StoryboardInstantiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215BFE4B20D27C7200F28DDC /* NSViewController+StoryboardInstantiable.swift */; };
 		21EDEB9D20D65F38005A6240 /* TemplateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21EDEB9C20D65F38005A6240 /* TemplateController.swift */; };
+		21EDEBA020D66F30005A6240 /* LocalStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21EDEB9F20D66F30005A6240 /* LocalStorage.swift */; };
+		21EDEBA220D66F46005A6240 /* Template.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21EDEBA120D66F46005A6240 /* Template.swift */; };
+		21EDEBA420D66F59005A6240 /* NSMenuItem+Creational.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21EDEBA320D66F59005A6240 /* NSMenuItem+Creational.swift */; };
+		21EDEBA720D66F6F005A6240 /* StorageKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21EDEBA620D66F6F005A6240 /* StorageKey.swift */; };
+		21EDEBA920D66F85005A6240 /* StorageKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21EDEBA820D66F85005A6240 /* StorageKeys.swift */; };
 		21FAFC8920D25D5700067899 /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FAFC8820D25D5700067899 /* Credentials.swift */; };
 		21FAFC8D20D25FC100067899 /* ApplicationErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FAFC8C20D25FC100067899 /* ApplicationErrors.swift */; };
 		21FAFCB520D2646900067899 /* CredentialsStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FAFC9220D2646900067899 /* CredentialsStorage.swift */; };
@@ -76,6 +81,11 @@
 		215BFE4820D26AE400F28DDC /* ApplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationController.swift; sourceTree = "<group>"; };
 		215BFE4B20D27C7200F28DDC /* NSViewController+StoryboardInstantiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSViewController+StoryboardInstantiable.swift"; sourceTree = "<group>"; };
 		21EDEB9C20D65F38005A6240 /* TemplateController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateController.swift; sourceTree = "<group>"; };
+		21EDEB9F20D66F30005A6240 /* LocalStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorage.swift; sourceTree = "<group>"; };
+		21EDEBA120D66F46005A6240 /* Template.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Template.swift; sourceTree = "<group>"; };
+		21EDEBA320D66F59005A6240 /* NSMenuItem+Creational.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSMenuItem+Creational.swift"; sourceTree = "<group>"; };
+		21EDEBA620D66F6F005A6240 /* StorageKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageKey.swift; sourceTree = "<group>"; };
+		21EDEBA820D66F85005A6240 /* StorageKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageKeys.swift; sourceTree = "<group>"; };
 		21FAFC8820D25D5700067899 /* Credentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credentials.swift; sourceTree = "<group>"; };
 		21FAFC8C20D25FC100067899 /* ApplicationErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationErrors.swift; sourceTree = "<group>"; };
 		21FAFC9220D2646900067899 /* CredentialsStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CredentialsStorage.swift; sourceTree = "<group>"; };
@@ -147,11 +157,12 @@
 		21443F3420D2501900114A54 /* Nimbus */ = {
 			isa = PBXGroup;
 			children = (
-				215BFE4A20D27C5F00F28DDC /* Extensions */,
 				21FAFC3820D25BF700067899 /* Application */,
 				21FAFC3920D25BFD00067899 /* Controllers */,
+				215BFE4A20D27C5F00F28DDC /* Extensions */,
 				21FAFC8720D25D3D00067899 /* Models */,
 				21FAFC9020D2646900067899 /* Services */,
+				21EDEB9E20D66F05005A6240 /* Utilities */,
 			);
 			path = Nimbus;
 			sourceTree = "<group>";
@@ -169,8 +180,36 @@
 			isa = PBXGroup;
 			children = (
 				215BFE4B20D27C7200F28DDC /* NSViewController+StoryboardInstantiable.swift */,
+				21EDEBA320D66F59005A6240 /* NSMenuItem+Creational.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		21EDEB9E20D66F05005A6240 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				21EDEBAA20D66F9A005A6240 /* Hotkey manager */,
+				21EDEBA520D66F64005A6240 /* Local storage */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		21EDEBA520D66F64005A6240 /* Local storage */ = {
+			isa = PBXGroup;
+			children = (
+				21EDEB9F20D66F30005A6240 /* LocalStorage.swift */,
+				21EDEBA620D66F6F005A6240 /* StorageKey.swift */,
+				21EDEBA820D66F85005A6240 /* StorageKeys.swift */,
+			);
+			path = "Local storage";
+			sourceTree = "<group>";
+		};
+		21EDEBAA20D66F9A005A6240 /* Hotkey manager */ = {
+			isa = PBXGroup;
+			children = (
+				212A72A320D3B329009F2184 /* HotkeyManager.swift */,
+			);
+			path = "Hotkey manager";
 			sourceTree = "<group>";
 		};
 		21FAFC3820D25BF700067899 /* Application */ = {
@@ -190,7 +229,6 @@
 			children = (
 				212A729D20D3A227009F2184 /* AccountController.swift */,
 				215BFE4820D26AE400F28DDC /* ApplicationController.swift */,
-				212A72A320D3B329009F2184 /* HotkeyManager.swift */,
 				21443F3720D2501900114A54 /* LoginViewController.swift */,
 				212A729F20D3A279009F2184 /* ProjectController.swift */,
 				212A72A120D3A7A3009F2184 /* StoriesController.swift */,
@@ -207,6 +245,7 @@
 				212A729720D36F17009F2184 /* Account.swift */,
 				212A729920D36F1F009F2184 /* Project.swift */,
 				212A729B20D36F27009F2184 /* Story.swift */,
+				21EDEBA120D66F46005A6240 /* Template.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -522,10 +561,13 @@
 				212A72A220D3A7A3009F2184 /* StoriesController.swift in Sources */,
 				21FAFCCB20D2646900067899 /* ServiceConfigurator.swift in Sources */,
 				21443F3620D2501900114A54 /* AppDelegate.swift in Sources */,
+				21EDEBA020D66F30005A6240 /* LocalStorage.swift in Sources */,
 				21FAFC8920D25D5700067899 /* Credentials.swift in Sources */,
 				21FAFC8D20D25FC100067899 /* ApplicationErrors.swift in Sources */,
 				21FAFCC720D2646900067899 /* ApplicationPaths.swift in Sources */,
 				215BFE4C20D27C7200F28DDC /* NSViewController+StoryboardInstantiable.swift in Sources */,
+				21EDEBA420D66F59005A6240 /* NSMenuItem+Creational.swift in Sources */,
+				21EDEBA220D66F46005A6240 /* Template.swift in Sources */,
 				212A729E20D3A227009F2184 /* AccountController.swift in Sources */,
 				21FAFCCC20D2646900067899 /* ResponseHandler.swift in Sources */,
 				21FAFCC820D2646900067899 /* ServiceProvidable.swift in Sources */,
@@ -537,7 +579,9 @@
 				212A729C20D36F27009F2184 /* Story.swift in Sources */,
 				21FAFCB620D2646900067899 /* Keychain.swift in Sources */,
 				21FAFCC220D2646900067899 /* RequestManager.swift in Sources */,
+				21EDEBA720D66F6F005A6240 /* StorageKey.swift in Sources */,
 				21EDEB9D20D65F38005A6240 /* TemplateController.swift in Sources */,
+				21EDEBA920D66F85005A6240 /* StorageKeys.swift in Sources */,
 				21FAFCC420D2646900067899 /* APIRequestable.swift in Sources */,
 				21FAFCCD20D2646900067899 /* ResponseHandlable.swift in Sources */,
 			);
