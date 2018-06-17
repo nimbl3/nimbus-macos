@@ -14,12 +14,9 @@ final class StoriesController: MenuController {
     private let manager: RequestManager
     private var disposable: Disposable?
     
-    private let projectItem = NSMenuItem(title: "No project selected", action: nil, keyEquivalent: "")
-    private let helpItem = NSMenuItem(
-        title: "- Select a story and use CMD + SHIFT + C.",
-        action: nil,
-        keyEquivalent: ""
-    )
+    private let projectItem = NSMenuItem(title: "No project selected")
+    private let helpItem = NSMenuItem(title: "- Select a story and use CMD + SHIFT + C.")
+    
     private var storyItems: [NSMenuItem] = []
     
     private(set) var stories: [Story] = [] {
