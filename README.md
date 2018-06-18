@@ -3,7 +3,7 @@ A simple system tray application that syncs with Pivotal Tracker.
 
 ## License
 
-This project is Copyright (c) 2014-2017 Nimbl3 Ltd. It is free software,
+This project is Copyright (c) 2014-2018 Nimbl3 Ltd. It is free software,
 and may be redistributed under the terms specified in the [LICENSE] file.
 
 [LICENSE]: /LICENSE
